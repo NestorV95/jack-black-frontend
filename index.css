@@ -27,6 +27,15 @@ body{
     width: 100vw; 
 }
 
+/* .card{
+
+} */
+.profile-picture{
+    width: 10vmin;
+    height: 10vmin;
+    border-radius: 50%;
+}
+
 #app-title{
     text-align: center;
     font-size: 5vmax;
