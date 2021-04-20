@@ -7,12 +7,9 @@ const fetchUsers = () =>{
 }
 
 const renderUsers = nestedData =>{
-    console.log(nestedData)
     const {data} = nestedData
-    console.log(data)
     data.forEach(userData => {
         const {attributes} = userData
-        console.log(attributes)
         const bodyDiv = document.querySelector('.body-div')
         const card = document.createElement('div')
         card.className = 'card'
@@ -29,63 +26,45 @@ const renderUsers = nestedData =>{
         cardBody.append(username,tokens)
         card.append(imageDiv,cardBody)
         bodyDiv.append(card)
-
     });
 }
 
 const createUser = event =>{
     const submittedUser = {
-        picture: event.target.picture.value,
-        name: event.target.name.value,
-        password: event.target.password.value,
-        tokens: 500,
+        picture: event.target.picture.value, name: event.target.name.value,
+        password: event.target.password.value, tokens: 500
     }
-    console.log(submittedUser)
     const configUser = {
         method: 'POST',
-        headers:{
-            'Content-Type':'application/json',
-            'Accept':'application/json'
-        },
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
         body: JSON.stringify(submittedUser)
     }
-    console.log(configUser)
     fetch(usersUrl, configUser)
     .then(resp=>resp.json())
     .then(newUser=> console.log(newUser))
 }
 
+// currently hard coded for testing purposes. will fix when our app is more functional.
 const updateUserInfo = (event,user=3) =>{
     const updatedUser = {
-        picture: event.target.picture.value,
-        name: event.target.name.value,
+        picture: event.target.picture.value, name: event.target.name.value,
         password: event.target.password.value
     }
-    console.log(updatedUser)
     const configUser = {
         method: 'PATCH',
-        headers:{
-            'Content-Type':'application/json',
-            'Accept':'application/json'
-        },
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
         body: JSON.stringify(updatedUser)
     }
-    console.log(configUser)
     fetch(`${usersUrl}/${user}`, configUser)
     .then(resp=>resp.json())
     .then(updateUser=> console.log(updateUser))
 }
 
-const deleteUser = (user=3) =>{
+// currently hard coded for testing purposes. will fix when our app is more functional.
+const deleteUser = (user=4) =>{
     const configUser = {
         method: 'DELETE',
-        headers:{
-            'Content-Type':'application/json',
-            'Accept':'application/json'
-        }
+        headers:{ 'Content-Type':'application/json','Accept':'application/json'}
     }
-    console.log(configUser)
     fetch(`${usersUrl}/${user}`, configUser)
 }
-
-
