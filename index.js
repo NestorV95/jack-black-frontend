@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded',e=>{
     // fetchGames()
-    //fetchUsers()
+    // fetchUsers()
     // fetchDealers()
-    //showSignUpForm()
-    showEditForm()
+    // showSignUpForm()
+       showUserHandEditForm()
+    //    showEditForm()
 })
