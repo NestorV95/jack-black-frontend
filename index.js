@@ -3,5 +3,7 @@ document.addEventListener('DOMContentLoaded',e=>{
     //fetchUsers()
     // fetchDealers()
     //showSignUpForm()
-    showEditForm()
+    //showUserEditForm()
+    //showDeleteButton()
+    //fetchDealerHands()
 })
