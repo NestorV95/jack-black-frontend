@@ -1,7 +1,5 @@
 const gamesUrl = 'http://localhost:3000/games'
 
-//adjust so that it fetches a single game
-
 class Card{
     constructor(suit, name, value) {
         this.suit = suit;
@@ -96,6 +94,7 @@ const fetchGames = () =>{
 const renderGames = nestedData =>{
     let data = nestedData['data'][0]
     let currentUser = data.attributes.users[0]
+
     let d_hand = new dealer_hand()
     let u_hand = new user_hand(data['attributes']['user_hands'][0]['bet'])
     u_hand.appendCard()
@@ -105,10 +104,6 @@ const renderGames = nestedData =>{
     d_hand.appendCard()
 
     //button to stand
-    while(d_hand.value() < 16){
-        d_hand.appendCard()
-        d_hand.busted_check()
-    }
     if(d_hand.busted == true) {
         currentUser.tokens = currentUser.tokens + u_hand.bet
         //something soemthing  "User Wins"
@@ -120,9 +115,13 @@ const renderGames = nestedData =>{
     //button to draw
     u_hand.appendCard()
     u_hand.busted_check()
+    if(u_hand.busted == true) {
+        currentUser.tokens = currentUser.tokens - u_hand.bet
+        //something soemthing  "User Loses"
+    } else {
+        //reshow screen with out 2 buttons and with your new card
+    }
 
-    //check u_hand.busted then do whatever
-    
     //button to double down
     u_hand.bet = u_hand.bet * 2
     u_hand.appendCard()
@@ -131,12 +130,22 @@ const renderGames = nestedData =>{
         currentUser.tokens = currentUser.tokens - u_hand.bet
         return "User Loses"
     } else {
-        let results = win_check(data,u_hand.value(),d_hand.value())
+        while(d_hand.value() < 16){
+            d_hand.appendCard()
+            d_hand.busted_check()
+        }
+        if(d_hand.busted == true) {
+            currentUser.tokens = currentUser.tokens + u_hand.bet
+            //something soemthing  "User Wins"
+        } else {
+            let results = win_check(data,u_hand.value(),d_hand.value())
+            //do whatever with results
+        }
         //do whatever with results
     }
 
     //button to surrender
     currentUser.tokens = currentUser.tokens - (u_hand.bet/2)
-
+    console.log(u_hand)
 
 }
