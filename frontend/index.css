@@ -2,15 +2,35 @@ html{
     height: 100vh;
     width: 100vw;
     font-size: 62.5%; 
-    background: red;
+    background: white;
 }
 body{
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     margin: 0;
-    background: radial-gradient(circle at 50vw 50vh, rgb(196, 196, 196), rgb(0, 0, 0));
+    /* background: radial-gradient(circle at 50vw 50vh, rgb(196, 196, 196), rgb(0, 0, 0)); */
+}
+.title-div{
+    position: absolute;
+    height: 20vh;
+    width: 100vw;
+    
 }
 
+.body-div{
+    position: absolute;
+    top: 20vh;
+    height: 80vh;
+    width: 100vw; 
+}
+
+#app-title{
+    text-align: center;
+    font-size: 5vmax;
+    text-shadow:
+    .5vmin .5vmin 1vmin white,
+    -.5vmin -.5vmin 1vmin white;
+}
