@@ -1,4 +1,4 @@
-const showEditForm = () => {
+const showUserEditForm = () => {
     const bodyDiv = document.querySelector('.body-div')
     const formContainer = document.createElement('div')
     formContainer.className = "form-container"
@@ -54,14 +54,14 @@ const showEditForm = () => {
     editForm.addEventListener('submit',event =>{
         event.preventDefault()
         updateUserInfo(event)  
-        hideEditForm()  
+        hideUserEditForm()  
     })
     formContainer.append(editForm)
     bodyDiv.append(editForm)
 } 
 
 
-const hideEditForm = () => {
+const hideUserEditForm = () => {
     const bodyDiv = document.querySelector('.body-div')
     const formContainer = document.querySelector('.form-container')
     bodyDiv.remove(formContainer)
