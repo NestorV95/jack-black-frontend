@@ -1,0 +1,63 @@
+.profile-picture{
+    position: absolute;
+    display: block;
+    width: 24vmin;
+    height: 24vmin;
+    left: 5.5vw;
+    border-radius: 50%;
+    border: .5vmin solid orange;
+}
+
+.profile-picture-container{
+    position: absolute;
+    display: block;
+    height: 25vh;
+    width: 23.75vw;
+    top: .5vh;
+    left: .5vw;
+    border-radius: 10%;
+    border: .5vmin solid red;
+}
+
+.user-card-profile{
+    position: absolute;
+    display: block;
+    height: 41.5vh;
+    width: 23.75vw;
+    top: 27vmin;
+    left: .5vmin;
+    border-radius: 10%;
+    border: .5vmin solid red;
+}
+
+.name-container{
+    position: absolute;
+    display: block;
+    text-align: center;
+    height: 7vh;
+    width: 20vw;
+    top: 1vh;
+    left: 2.5vmin;
+    border-radius: 15%;
+    border: .5vmin solid orange;
+}
+
+.token-container{
+    position: absolute;
+    display: block;
+    text-align: center;
+    height: 7vh;
+    width: 20vw;
+    top: 9vmin;
+    left: 2.5vmin;
+    border-radius: 10%;
+    border: .5vmin solid orange;
+}
+
+.username{
+    font-size: 3.25vmin;
+}
+
+.tokens{
+    font-size: 3.25vmin;
+}

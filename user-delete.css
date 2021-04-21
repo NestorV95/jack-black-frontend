@@ -1,0 +1,106 @@
+.delete-user-button-container{
+    position: absolute;
+    display: block;
+    height: 4.5vmin;
+    width: 40vmin;
+    top: 15vmin;
+    left: 12.25vmin;
+    border-radius: 5%;
+    border: .5vmin solid orange;
+}
+
+.delete-user-button{
+    position:absolute;
+    display: block;
+    height: 4.5vmin;
+    width: 40vmin;
+}
+
+.delete-user-prompt-container{
+    position: absolute;
+    display: block;
+    height: 20vmin;
+    width: 40vmin;
+    top: 10vmin;
+    left: 12.25vmin;
+    border-radius: 20%;
+    border: .5vmin solid orange;
+}
+
+.delete-user-prompt-text{
+    font-size: 2.75vmin;
+    position: absolute;
+    display: block;
+    height: 13vmin;
+    width: 35vmin;
+    top: -2vmin;
+    left: 2vmin;
+    border-radius: 20%;
+    border: .5vmin solid blueviolet;
+}
+
+.delete-user-prompt-button-container{
+    position: absolute;
+    display: block;
+    height: 5vmin;
+    width: 35vmin;
+    top: 14vmin;
+    left: 2vmin;
+    border-radius: 20%;
+    border: .5vmin solid blueviolet;
+}
+
+.yes-delete-user-button{
+    position: absolute;
+    display: block;
+    height: 5vmin;
+    width: 15vmin;
+    top: 0vmin;
+    left: 1.5vmin;
+    border-radius: 15%;
+    border: .5vmin solid green;
+}
+
+.no-delete-user-button{
+    position: absolute;
+    display: block;
+    height: 5vmin;
+    width: 15vmin;
+    top: 0vmin;
+    left: 18.5vmin;
+    border-radius: 15%;
+    border: .5vmin solid green;
+}
+
+.delete-user-form-container{
+    position: absolute;
+    display: block;
+    height: 5vmin;
+    width: 35vmin;
+    top: 14vmin;
+    left: 2vmin;
+    border-radius: 20%;
+    border: .5vmin solid blueviolet;
+}
+
+.delete-user-input{
+    position: absolute;
+    display: block;
+    height: 4vmin;
+    width: 25vmin;
+    top: 0vmin;
+    left: 0vmin;
+    border-radius: 15%;
+    border: .5vmin solid green;
+}
+
+.confirm-user-delete{
+    position: absolute;
+    display: block;
+    height: 5vmin;
+    width: 9vmin;
+    top: 0vmin;
+    left: 26vmin;
+    border-radius: 15%;
+    border: .5vmin solid green;
+}

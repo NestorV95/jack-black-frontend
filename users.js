@@ -9,24 +9,38 @@ const fetchUsers = () =>{
 const renderUsers = nestedData =>{
     const {data} = nestedData
     data.forEach(userData => {
-        const {attributes} = userData
-        const bodyDiv = document.querySelector('.body-div')
-        const card = document.createElement('div')
-        card.className = 'card'
-        const imageDiv = document.createElement('div')
-        const image = document.createElement('img')
-        image.className = 'profile-picture'
-        image.src = attributes.picture
-        imageDiv.append(image)
-        const cardBody = document.createElement('div')
-        const username = document.createElement('p')
-        username.innerText = attributes.name
-        const tokens = document.createElement('p')
-        tokens.innerText = attributes.tokens
-        cardBody.append(username,tokens)
-        card.append(imageDiv,cardBody)
-        bodyDiv.append(card)
+        renderUser(userData)
     });
+}
+
+const renderUser = (userData) =>{
+    const {attributes} = userData
+    const userContainer = document.querySelector('.user-container')
+    const userCard = document.createElement('div')
+    userCard.className = 'user-card'
+    const imageDiv = document.createElement('div')
+    imageDiv.className = 'profile-picture-container'
+    const image = document.createElement('img')
+    image.className = 'profile-picture'
+    image.src = attributes.picture
+    imageDiv.append(image)
+    const cardBody = document.createElement('div')
+    cardBody.className = 'user-card-profile'
+    const nameContainer = document.createElement('div')
+    nameContainer.className = 'name-container'
+    const username = document.createElement('p')
+    username.innerText = `Username: @${attributes.name}`
+    username.className = 'username'
+    nameContainer.append(username)
+    const tokenContainer = document.createElement('div')
+    tokenContainer.className = 'token-container'
+    const tokens = document.createElement('p')
+    tokens.innerText = `Tokens: ${attributes.tokens}`
+    tokens.className = 'tokens'
+    tokenContainer.append(tokens)
+    cardBody.append(nameContainer,tokenContainer)
+    userCard.append(imageDiv,cardBody)
+    userContainer.append(userCard)
 }
 
 const createUser = event =>{
