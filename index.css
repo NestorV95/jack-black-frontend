@@ -15,16 +15,22 @@ body{
 }
 .title-div{
     position: absolute;
-    height: 20vh;
-    width: 100vw;
-    
+    display: block;
+    height: 15vh;
+    width: 95vw;
+    top: 2.5vh;
+    left: 2.5vw;
+    border: .5rem solid green;
 }
 
 .body-div{
     position: absolute;
-    top: 20vh;
-    height: 80vh;
-    width: 100vw; 
+    display: block;
+    height: 75vh;
+    width: 95vw;
+    top: 21vh;
+    left: 2.5vw;
+    border: .5rem solid green;
 }
 
 /* .card{
@@ -38,7 +44,7 @@ body{
 
 #app-title{
     text-align: center;
-    font-size: 5vmax;
+    font-size: 7vmin;
     text-shadow:
     .5vmin .5vmin 1vmin white,
     -.5vmin -.5vmin 1vmin white;
