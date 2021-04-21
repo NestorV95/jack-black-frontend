@@ -109,15 +109,15 @@ const renderGames = nestedData =>{
     //get page
     let bodyDiv = document.getElementsByClassName('body-div')[0]
     //make divs
-    let uProfileDiv = document.createElement('div')
-    u_hand_div = document.createElement('div')
-    d_hand_div = document.createElement('div')
-    buttons_div = document.createElement('div')
+    const uProfileDiv = document.createElement('div')
+    const u_hand_div = document.createElement('div')
+    const d_hand_div = document.createElement('div')
+    const buttons_div = document.createElement('div')
 
     //make divs className
-    uProfileDiv.id = 'u_profile'
-    u_hand_div.id = 'u_hand'
-    d_hand_div.id = 'd_hand'
+    uProfileDiv.id = 'u-profile'
+    u_hand_div.id = 'u-hand'
+    d_hand_div.id = 'd-hand'
     buttons_div.id = 'buttons'
 
     //things arnt getting deleted and reloaded for some reason otherwise it works
@@ -133,10 +133,13 @@ const renderGames = nestedData =>{
 }
 
 function uProfileDivDisplay(uProfileDiv, data, u_hand) {
-    uProfileDiv.html = ''
+    uProfileDiv.innerHTML = ''
 
     let h1 = document.createElement('h1')
     h1.innerText = data.attributes.users[0].name
+
+    let m = document.createElement('p')
+    m.innerText = 'TOKENS: ' + data.attributes.users[0].tokens
 
     let p = document.createElement('p')
     p.innerText = 'BET: ' + u_hand.bet
@@ -147,7 +150,7 @@ function uProfileDivDisplay(uProfileDiv, data, u_hand) {
 
 
 function uHandDisplay(u_hand_div, u_hand) {
-    u_hand_div.html = ''
+    u_hand_div.innerHTML = ''
 
     u_hand.cards.forEach(card => {
         let img = document.createElement('img')
@@ -163,7 +166,8 @@ function uHandDisplay(u_hand_div, u_hand) {
 
 
 function dHandDisplay(d_hand_div, d_hand) {
-    d_hand_div.html = ''
+    
+    d_hand_div.innerHTML = ''
 
     d_hand.cards.forEach(card => {
         let img = document.createElement('img')
@@ -178,7 +182,7 @@ function dHandDisplay(d_hand_div, d_hand) {
 }
 
 function buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_div, d_hand_div, first){
-    buttons_div.html = ''
+    buttons_div.innerHTML = ''
 
     //button to stand
     let standBtn = document.createElement('button')
