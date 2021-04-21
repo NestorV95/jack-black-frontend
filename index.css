@@ -12,19 +12,23 @@ body{
     align-items: center; */
     margin: 0;
     /* background: radial-gradient(circle at 50vw 50vh, rgb(196, 196, 196), rgb(0, 0, 0)); */
-}
-.title-div{
+}.title-div{
     position: absolute;
-    height: 20vh;
-    width: 100vw;
-    
+    display: block;
+    height: 15vh;
+    width: 95vw;
+    top: 2.5vh;
+    left: 2.5vw;
+    border: .5rem solid green;
 }
-
 .body-div{
     position: absolute;
-    top: 20vh;
-    height: 80vh;
-    width: 100vw; 
+    display: block;
+    height: 75vh;
+    width: 95vw;
+    top: 21vh;
+    left: 2.5vw;
+    border: .5rem solid green;
 }
 
 /* .card{
