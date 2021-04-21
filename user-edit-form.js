@@ -1,3 +1,4 @@
+
 const showUserEditButton = () =>{
     const settingsOptionsDiv = document.querySelector('.settings-options-div')
     const editButtonDiv = document.createElement('div')
@@ -88,5 +89,4 @@ const showUserEditForm = () => {
     formContainer.append(editForm)
     settingsOptionsDiv.append(formContainer)
 } 
-
 

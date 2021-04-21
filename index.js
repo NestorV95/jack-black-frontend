@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',e=>{
     // fetchGames()
-    showMainPage()
+    //showMainPage()
     // fetchDealers()
     //showSignUpForm()
     //fetchDealerHands()
