@@ -108,6 +108,7 @@ const renderGames = nestedData =>{
 
     //get page
     let bodyDiv = document.getElementsByClassName('body-div')[0]
+    bodyDiv.innerHTML = ""
     //make divs
     const uProfileDiv = document.createElement('div')
     const u_hand_div = document.createElement('div')
@@ -123,10 +124,10 @@ const renderGames = nestedData =>{
     //things arnt getting deleted and reloaded for some reason otherwise it works
 
 
-    uProfileDivDisplay(uProfileDiv, data, u_hand, document)
+    uProfileDivDisplay(uProfileDiv, data, u_hand)
     uHandDisplay(u_hand_div, u_hand)
     dHandDisplay(d_hand_div, d_hand)
-    buttonDisplay(buttons_div, u_hand, d_hand, currentUser, data, u_hand_div, d_hand_div, true)
+    buttonDisplay(buttons_div, u_hand, d_hand, currentUser, data, u_hand_div, d_hand_div, uProfileDiv, true)
 
     bodyDiv.append(uProfileDiv, u_hand_div, d_hand_div, buttons_div)
 
@@ -144,7 +145,7 @@ function uProfileDivDisplay(uProfileDiv, data, u_hand) {
     let p = document.createElement('p')
     p.innerText = 'BET: ' + u_hand.bet
 
-    uProfileDiv.append(h1, p)
+    uProfileDiv.append(h1, m, p)
 
 }
 
@@ -181,7 +182,7 @@ function dHandDisplay(d_hand_div, d_hand) {
     d_hand_div.append(p)
 }
 
-function buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_div, d_hand_div, first){
+function buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_div, d_hand_div, uProfileDiv, first){
     buttons_div.innerHTML = ''
 
     //button to stand
@@ -197,21 +198,29 @@ function buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_d
             if(d_hand.busted == true) {
                 currentUser.tokens = currentUser.tokens + u_hand.bet
                 //something soemthing  "User Wins"
+                
                 console.log('dealer busted')
             } else {
                 let results = win_check(data,u_hand.value(),d_hand.value())
                 //do whatever with results
                 if(results == 'User Wins'){
                     console.log('User Wins')
+                    currentUser.tokens = currentUser.tokens + u_hand.bet
+
                 } else if (results == 'User Loses'){
                     console.log('User Loses')
+                    currentUser.tokens = currentUser.tokens - u_hand.bet
+
                 } else {
                     console.log('User Ties')
                 }
             }
         } else {
+            currentUser.tokens = currentUser.tokens - u_hand.bet
+
             console.log('User Loses')
         }
+        uProfileDivDisplay(uProfileDiv, data, u_hand)
         
     })
 
@@ -224,11 +233,17 @@ function buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_d
         uHandDisplay(u_hand_div, u_hand)
         if(u_hand.busted == true) {
             currentUser.tokens = currentUser.tokens - u_hand.bet
-            console.log('user busted')
+            console.log('User busted')
+            uProfileDivDisplay(uProfileDiv, data, u_hand)
+        } else if (u_hand.value == 21) {
+            currentUser.tokens = currentUser.tokens + u_hand.bet
+            console.log('Dealer busted')
+            uProfileDivDisplay(uProfileDiv, data, u_hand)
+
         } else {
             //reshow screen with out 2 buttons and with your new card
             buttons_div.html = ''
-            buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_div, d_hand_div, false)
+            buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_div, d_hand_div, uProfileDiv, false)
         }    
     })
 
@@ -260,7 +275,11 @@ function buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_d
                 //do whatever with results
                 if(results == 'User Wins'){
                     console.log('User Wins')
+                    currentUser.tokens = currentUser.tokens + u_hand.bet
+
                 } else if (results == 'User Loses'){
+                    currentUser.tokens = currentUser.tokens - u_hand.bet
+
                     console.log('User Loses')
                 } else {
                     console.log('User Ties')
@@ -269,6 +288,7 @@ function buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_d
 
             }
         }
+        uProfileDivDisplay(uProfileDiv, data, u_hand)
     })
 
     //button to surrender
@@ -277,6 +297,7 @@ function buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_d
     surBtn.addEventListener('click', (e) => {
         currentUser.tokens = currentUser.tokens - (u_hand.bet/2)
         console.log('surrendered')
+        uProfileDivDisplay(uProfileDiv, data, u_hand)
     })
 
     if(first == true){
