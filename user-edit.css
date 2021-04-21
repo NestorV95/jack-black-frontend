@@ -1,0 +1,72 @@
+.edit-button-container{
+    position: absolute;
+    display: block;
+    height: 4.5vmin;
+    width: 40vmin;
+    top: 8vmin;
+    left: 12.25vmin;
+    border-radius: 5%;
+    border: .5vmin solid orange;
+}
+
+.edit-button{
+    position:absolute;
+    display: block;
+    height: 4.5vmin;
+    width: 40vmin;
+}
+
+.user-edit-form-container{
+    position: absolute;
+    display: block;
+    height: 41.5vh;
+    width: 31.25vw;
+    top: .5vmin;
+    left: .5vmin;
+    border-radius: 5%;
+    border: .5vmin solid orange;
+}
+
+.user-edit-form{
+    position: absolute;
+    display: block;
+    height: 39.50vh;
+    width: 20vw;
+    top: .5vmin;
+    left: 10vmin;
+    border-radius: 5%;
+    border: .5vmin solid blueviolet
+}
+
+.user-edit-form-div{
+    height: 7vh;
+    width: 15vw;
+    left: 2.5vw;
+    border-radius: 5%;
+    border: .5vmin solid green
+}
+
+.edit-label{
+    font-size: 3vmin;
+}
+
+.edit-input{
+    height: 3vmin;
+    width: 30vmin;
+}
+
+.submit-button{
+    position:absolute;
+    display: block;
+    height: 4.5vmin;
+    width: 18vmin;
+    left: 1vmin;
+}
+
+.cancel-user-edit-button{
+    position:absolute;
+    display: block;
+    height: 4.5vmin;
+    width: 18vmin;
+    left: 21vmin;
+}

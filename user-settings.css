@@ -1,0 +1,65 @@
+.set-btn-container{
+    position: absolute;
+    display: block;
+    height: 5vmin;
+    width: 5vmin;
+    top: .5vh;
+    left: 20vw;
+    z-index: 10;
+    text-align: center;
+    border-radius: 50%;
+    border: .5vmin solid orange;
+}
+
+.settings-button{
+    background: transparent;
+    border: transparent;
+    border-radius: 50%;
+    font-size:4vmin;
+    z-index: 11;
+}
+
+.settings-title-div{
+    position: absolute;
+    display: block;
+    height: 15vmin;
+    width: 32.5vmax;
+    top: 2vmin;
+    left: 32.5vmin;
+    text-align: center;
+    border-radius: 7%;
+    border: .5vmin solid red;
+}
+
+.settings-title{
+    font-size: 6vmin;
+}
+
+.settings-options-div{
+    position: absolute;
+    display: block;
+    height: 44vmin;
+    width: 32.5vmax;
+    top: 22vmin;
+    left: 32.5vmin;
+    border-radius: 5%;
+    border: .5vmin solid red;
+}
+
+.exit-settings-button-container{
+    position: absolute;
+    display: block;
+    height: 4.5vmin;
+    width: 40vmin;
+    top: 22vmin;
+    left: 12.25vmin;
+    border-radius: 5%;
+    border: .5vmin solid orange;
+}
+
+.exit-settings-button{
+    position:absolute;
+    display: block;
+    height: 4.5vmin;
+    width: 40vmin;
+}

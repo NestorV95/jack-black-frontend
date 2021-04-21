@@ -1,0 +1,104 @@
+.two-third-container{
+    position: absolute;
+    display: block;
+    height: 70vh;
+    width: 67vw;
+    top: 2vh;
+    left: 26.5vw;
+    border-radius: 5%;
+    border: .5vmin solid blue;
+}
+
+.game-container{
+    position: absolute;
+    display: block;
+    height: 44vmin;
+    width: 65.5vmax;
+    top: .5vmin;
+    left: .5vmin;
+    border-radius: 5%;
+    border: .5vmin solid red;
+}
+
+.game-image-container{
+    position: absolute;
+    display: block;
+    height: 42vmin;
+    width: 43.5vw;
+    top: .5vmin;
+    left: .5vw;
+    border-radius: 5%;
+    border: .5vmin solid orange;
+}
+
+.game-details-container{
+    position: absolute;
+    display: block;
+    height: 42vh;
+    width: 20vw;
+    top: .5vh;
+    left: 44.5vw;
+    border-radius: 5%;
+    border: .5vmin solid orange;
+}
+
+.start-game-button-container{
+    position: absolute;
+    display: block;
+    height: 5vh;
+    width: 10vw;
+    top: 36vh;
+    left: 16vw;
+    z-index: 10;
+    text-align: center;
+    border-radius: 10%;
+    border: .5vmin solid blueviolet;
+}
+
+.game-title-container{
+    position: absolute;
+    display: block;
+    height: 7vh;
+    width: 19vw;
+    top: .25vh;
+    left: .25vw;
+    text-align: center;
+    border-radius: 10%;
+    border: .5vmin solid blueviolet; 
+}
+
+.game-details-body{
+    position: absolute;
+    display: block;
+    height: 32vh;
+    width: 19vw;
+    top: 8.50vh;
+    left: .25vw;
+    text-align: center;
+    border-radius: 10%;
+    border: .5vmin solid blueviolet; 
+}
+
+.games-index{
+    position: absolute;
+    display: block;
+    height: 23.5vmin;
+    width: 65.5vmax;
+    top: 45vmin;
+    left: .5vmin;
+    border-radius: 7%;
+    border: .5vmin solid red;
+}
+
+.user-container{
+    position: absolute;
+    display: block;
+    height: 70vh;
+    width: 25vw;
+    top: 2vh;
+    left: 0.5vw;
+    border-radius: 10%;
+    border: .5vmin solid blue;
+}
+
+
