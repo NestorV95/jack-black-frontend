@@ -120,6 +120,9 @@ const renderGames = nestedData =>{
     d_hand_div.id = 'd_hand'
     buttons_div.id = 'buttons'
 
+    //things arnt getting deleted and reloaded for some reason otherwise it works
+
+
     uProfileDivDisplay(uProfileDiv, data, u_hand, document)
     uHandDisplay(u_hand_div, u_hand)
     dHandDisplay(d_hand_div, d_hand)
@@ -175,9 +178,6 @@ function dHandDisplay(d_hand_div, d_hand) {
 }
 
 function buttonDisplay(buttons_div, u_hand, d_hand, currentUser ,data , u_hand_div, d_hand_div, first){
-
-    //things arnt getting deleted and reloaded for some reaosn otherwise it works
-
     buttons_div.html = ''
 
     //button to stand
