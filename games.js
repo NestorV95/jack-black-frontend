@@ -1,18 +1,35 @@
 const gamesUrl = 'http://localhost:3000/games'
 
-function win_check(data,u_value,d_value) {
+//NEEDS TO BE ADJUSTED
+function win_check(currentUser,u_value,d_value) {
     if (u_value > d_value) {
-        data.attributes.users[0].tokens = data.attributes.users[0].tokens + data.attributes.user_hands[0].bet
+        currentUser.attributes.tokens = currentUser.attributes.tokens + currentUser.attributes.user_hands[0].bet
         return "User Wins"
     }
     if (u_value < d_value) {
-        data.attributes.users[0].tokens = data.attributes.users[0].tokens - data.attributes.user_hands[0].bet
+        currentUser.attributes.tokens = currentUser.attributes.tokens - currentUser.attributes.user_hands[0].bet
         return "User Loses"
     }
     if (u_value = d_value) {
-        data.attributes.users[0].tokens
+        currentUser.attributes.tokens = currentUser.attributes.tokens
         return "User Ties"
     }
+}
+
+
+const updateUser = (currentUser) =>{
+    const configUser = {
+        method: 'PATCH',
+        headers:{
+            'Content-Type':'application/json',
+            'Accept':'application/json'
+        },
+        body: JSON.stringify({name: currentUser.attributes.name
+            ,password: currentUser.attributes.password
+            ,picture: currentUser.attributes.picture
+            ,tokens: currentUser.attributes.tokens})
+    }
+    fetch(`http://localhost:3000/users/${currentUser.attributes.id}`, configUser)
 }
 
 const fetchGames = () =>{
@@ -22,13 +39,12 @@ const fetchGames = () =>{
 }   
     
 const renderGames = nestedData =>{
-    //get data
-    let data = nestedData['data'][0]
-    let currentUser = data.attributes.users[0]
+    let data = nestedData['data'].find(game => game.attributes.users[0].id == globalUser.id)
+    let currentUser = globalUser
 
     //setup hands
     let d_hand = new dealer_hand()
-    let u_hand = new user_hand(data['attributes']['user_hands'][0]['bet'])
+    let u_hand = new user_hand(currentUser['attributes']['user_hands'][0]['bet'])
 
     u_hand.appendCard()
     u_hand.appendCard()
@@ -49,11 +65,11 @@ const renderGames = nestedData =>{
     u_hand_div.className = 'u-hand'
     d_hand_div.className = 'd-hand'
     buttons_div.className = 'buttons'
-    
+
     // //things arnt getting deleted and reloaded for some reason otherwise it works
     bodyDiv.append(uProfileDiv, u_hand_div, d_hand_div, buttons_div)
 
-    uProfileDivDisplay(data, u_hand)
+    uProfileDivDisplay(currentUser, u_hand)
     // fillGamePlayerProfile(data, u_hand)
     uHandDisplay(u_hand)
     // fillGameUserHand(u_hand)
@@ -63,15 +79,16 @@ const renderGames = nestedData =>{
     // fillGameButtonContainers(u_hand, d_hand, currentUser, data)
 }
 
-function uProfileDivDisplay(data, u_hand) {
+//NEEDS TO BE ADJUSTED
+function uProfileDivDisplay(currentUser, u_hand) {
     const uProfileDiv = document.querySelector('.u-profile')
     uProfileDiv.innerText = ''
 
     let h1 = document.createElement('h1')
-    h1.innerText = data.attributes.users[0].name
+    h1.innerText = currentUser.attributes.name
 
     let m = document.createElement('p')
-    m.innerText = 'TOKENS: ' + data.attributes.users[0].tokens
+    m.innerText = 'TOKENS: ' + currentUser.attributes.tokens
 
     let p = document.createElement('p')
     p.innerText = 'BET: ' + u_hand.bet
@@ -113,7 +130,9 @@ function dHandDisplay(d_hand) {
     d_hand_div.append(p)
 }
 
+//NEEDS TO BE ADJUSTED
 function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
+
     const buttons_div = document.querySelector('.buttons')
     buttons_div.innerHTML = ''
 
@@ -132,25 +151,30 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
             dHandDisplay(d_hand)
             // fillGameDealerHand(d_hand)
             if(d_hand.busted == true) {
-                currentUser.tokens = currentUser.tokens + u_hand.bet
+                currentUser.attributes.tokens = currentUser.attributes.tokens + u_hand.bet
                 buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
+                updateUser(currentUser)
 
             } else {
-                let results = win_check(data,u_hand.value(),d_hand.value())
+                let results = win_check(currentUser,u_hand.value(),d_hand.value())
                 if(results == 'User Wins'){
                     buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
+                    updateUser(currentUser)
                 } else if (results == 'User Loses'){
                     buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
+                    updateUser(currentUser)
                 } else {
                     buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
+                    updateUser(currentUser)
                 }
             }
         } else {
-            currentUser.tokens = currentUser.tokens - u_hand.bet
+            currentUser.attributes.tokens = currentUser.attributes.tokens - u_hand.bet
             buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
+            updateUser(currentUser)
 
         }
-        uProfileDivDisplay(data, u_hand)
+        uProfileDivDisplay(currentUser, u_hand)
         // fillGamePlayerProfile(data, u_hand)
     })
     // standButtonDiv.append(standBtn)
@@ -166,16 +190,17 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
         uHandDisplay(u_hand)
         // fillGameUserHand(u_hand)
         if(u_hand.busted == true) {
-            currentUser.tokens = currentUser.tokens - u_hand.bet
-            console.log('hit')
+            currentUser.attributes.tokens = currentUser.attributes.tokens - u_hand.bet
             buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
-            uProfileDivDisplay(data, u_hand)
+            updateUser(currentUser)
+            uProfileDivDisplay(currentUser, u_hand)
             // fillGamePlayerProfile(data, u_hand)
         } else if (u_hand.value() == 21) {
-            currentUser.tokens = currentUser.tokens + u_hand.bet
-            uProfileDivDisplay(data, u_hand)
+            currentUser.attributes.tokens = currentUser.attributes.tokens + u_hand.bet
+            uProfileDivDisplay(currentUser, u_hand)
             // fillGamePlayerProfile(data, u_hand)
             buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
+            updateUser(currentUser)
 
         } else {
             buttons_div.html = ''
@@ -196,9 +221,7 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
         uHandDisplay(u_hand)
         // fillGameUserHand(u_hand)
         if(u_hand.busted == true) {
-            currentUser.tokens = currentUser.tokens - u_hand.bet
-            console.log('user busted')
-            
+            currentUser.attributes.tokens = currentUser.attributes.tokens - u_hand.bet            
         } else {
             while(d_hand.value() < 16 || d_hand.value() < u_hand.value){
                 d_hand.appendCard()
@@ -207,14 +230,16 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
             dHandDisplay(d_hand)
             // fillGameDealerHand(d_hand)
             if(d_hand.busted == true) {
-                currentUser.tokens = currentUser.tokens + u_hand.bet
+                currentUser.attributes.tokens = currentUser.attributes.tokens + u_hand.bet
             } else {
-                let results = win_check(data,u_hand.value(),d_hand.value())
+                win_check(currentUser,u_hand.value(),d_hand.value())
+                win_check(currentUser,u_hand.value(),d_hand.value())
             }
         }
         u_hand.bet = u_hand.bet/2
         buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
-        uProfileDivDisplay(data, u_hand)
+        updateUser(currentUser)
+        uProfileDivDisplay(currentUser, u_hand)
         // fillGamePlayerProfile(data, u_hand)
     })
     // doubleButtonDiv.append(doubleBtn)
@@ -225,10 +250,10 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
     surBtn.className = 'surrender-button'
     surBtn.innerText = "Surrender"
     surBtn.addEventListener('click', (e) => {
-        currentUser.tokens = currentUser.tokens - (u_hand.bet/2)
-        console.log('surrendered')
+        currentUser.attributes.tokens = currentUser.attributes.tokens - (u_hand.bet/2)
         buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
-        uProfileDivDisplay(data, u_hand)
+        updateUser(currentUser)
+        uProfileDivDisplay(currentUser, u_hand)
         // fillGamePlayerProfile(data, u_hand)
     })
     // surrenderButtonDiv.append(surBtn)
@@ -238,7 +263,7 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
     exitBtn.className = 'exit-game-button'
     exitBtn.innerText = "Exit Game"
     exitBtn.addEventListener('click', (e) => {
-        showMainPage()
+        showMainPage(currentUser)
     })
     // exitGameButtonDiv.append(exitBtn)
 
@@ -257,7 +282,7 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
         u_hand.busted = false
         d_hand.busted = false
 
-        uProfileDivDisplay(data, u_hand)
+        uProfileDivDisplay(currentUser, u_hand)
         // fillGamePlayerProfile(data, u_hand)
         uHandDisplay(u_hand)
         // fillGameUserHand(u_hand)

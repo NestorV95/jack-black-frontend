@@ -1,5 +1,6 @@
 const showSignUpForm = () => {
-    const bodyDiv = document.querySelector('.body-div')
+    const homeFormDiv = document.querySelector('.home-form-container')
+    homeFormDiv.innerHTML = ''
     const formContainer = document.createElement('div')
     formContainer.className = "form-container"
     const signUpForm = document.createElement('form')
@@ -44,27 +45,27 @@ const showSignUpForm = () => {
     confirmInput.type = 'text'
     confirmInput.name = 'confirmation'
     confirmDiv.append(confirmLabel, confirmBr, confirmInput)
-    const submitDiv = document.createElement('div')
+    const signUpDiv = document.querySelector('.sign-up-button-container')
+    signUpDiv.innerHTML = ''
     const submitButton = document.createElement('input')
     submitButton.className = 'sign-up-button'
     submitButton.type = 'submit'
     submitButton.innerText = 'Sign Up'
-    submitDiv.append(submitButton)
-    signUpForm.append(imageDiv,usernameDiv,passwordDiv,confirmDiv,submitDiv)
+    signUpDiv.append(submitButton)
+    signUpForm.append(imageDiv,usernameDiv,passwordDiv,confirmDiv)
     signUpForm.addEventListener('submit',event =>{
         event.preventDefault()
-        createUser(event)  
-        hideSignUpForm()  
+        createUser(event)   
     })
     formContainer.append(signUpForm)
-    bodyDiv.append(signUpForm)
+    homeFormDiv.append(signUpForm)
 } 
 
-const hideSignUpForm = () => {
-    const bodyDiv = document.querySelector('.body-div')
-    const formContainer = document.querySelector('.form-container')
-    bodyDiv.remove(formContainer)
-}
+// const hideSignUpForm = () => {
+//     const homeFormDiv = document.querySelector('.body-div')
+//     const formContainer = document.querySelector('.form-container')
+//     homeFormDiv.remove(formContainer)
+// }
 
 
 // class FormValidator {
@@ -158,6 +159,6 @@ const hideSignUpForm = () => {
 //   const form = document.querySelector('.form')
 //   const fields = ["username", "email", "password", "password_confirmation"]
   
-  const validator = new FormValidator(form, fields)
-  validator.initialize()
+//   const validator = new FormValidator(form, fields)
+//   validator.initialize()
    
