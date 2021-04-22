@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded',e=>{
-    //showGamePage()
-    // showMainPage()
-    // fetchDealers()
-    // showSignUpForm()
-    // fetchDealerHands()
-    // showLoginForm()
+    resetGlobalUser()
     showWelcome()
-    
 })
+
+let globalUser = null
+
+const resetGlobalUser = ()=>{
+    globalUser = null
+}
 
 const clearBodyDiv = () => {
 const bodyDiv = document.querySelector('.body-div')
