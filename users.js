@@ -6,15 +6,15 @@ const fetchUsers = () =>{
     .then(nestedData=> renderUsers(nestedData))
 }
 
-const renderUsers = nestedData =>{
-    const {data} = nestedData
-    data.forEach(userData => {
-        renderUser(userData)
-    });
-}
+// const renderUsers = nestedData =>{
+//     const {data} = nestedData
+//     data.forEach(userData => {
+//         renderUser(userData)
+//     });
+// }
 
 const renderUser = (userData) =>{
-    const {attributes} = userData
+    const attributes = userData.attributes
     const userContainer = document.querySelector('.user-container')
     const userCard = document.createElement('div')
     userCard.className = 'user-card'

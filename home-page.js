@@ -37,7 +37,7 @@ const fillLoginButton = () => {
     welcomeLogin.innerText = 'Login'
     loginDiv.append(welcomeLogin)
     welcomeLogin.addEventListener("click", () => {
-        renderLoginForm()
+        showLoginForm()
         fillSignUpButton()
     })
 }

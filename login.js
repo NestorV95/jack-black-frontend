@@ -27,27 +27,23 @@ const renderLoginForm = (json) => {
     const loginDiv = document.querySelector('.login-button-container')
     loginDiv.innerHTML = ''
     const loginButton= document.createElement("button")
+    loginButton.className = "submit"
     loginButton.innerText="submit"
     loginDiv.append(loginButton)
-    loginForm.append(usernameDiv, passwordDiv)
+    console.log(json["data"])
+    loginForm.append(usernameDiv, passwordDiv, loginButton)
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault()
         let username= e.target[0].value
         let password= e.target[1].value
-        console.log(json["data"])
         let currentUsers=""
         json["data"].forEach(user =>{
             if (user.attributes.name == username && user.attributes.password == password) {
-                console.log("hit")
-                // this current will be passed on into whatever from nesters function
-                currentUser= user
+                globalUser = user
+                showMainPage(user)
+                renderUser(user)
             }
         })
-
-        if (currentUsers == ""){
-            console.log("failed")
-
-        }
 
     })
     homeFormDiv.append(loginForm) 

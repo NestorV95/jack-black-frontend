@@ -1,7 +1,7 @@
-const showMainPage = () => {
+const showMainPage = (json) => {
     clearBodyDiv()
     // showUserContainer()
-    fillUserContainer()
+    fillUserContainer(json)
     showTwoThirdContainer()
     fillTwoThirdGames()
 }
@@ -15,9 +15,9 @@ const showUserContainer = () =>{
     userContainer.className = 'user-container'
 }
 
-const fillUserContainer = () =>{
+const fillUserContainer = (json) =>{
     showUserContainer()
-    fetchUsers()
+    renderUser(json)
     showSettingsButton()
 }
 
