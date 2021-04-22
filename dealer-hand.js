@@ -1,5 +1,36 @@
 const dealerHandsUrl = 'http://localhost:3000/dealer_hands'
 
+class dealer_hand{
+
+    constructor() {
+        this.cards = []
+        this.busted = false
+    }
+
+    appendCard = () => {
+        this.cards.push(drawCard())
+        this.busted_check()
+    }
+
+    removeCards = () =>{
+        this.cards.splice(0, cards.length)
+    }
+
+    value = () => {
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+        let reducer = (accumulator, currentValue) => accumulator + currentValue;
+        return this.cards.map(card => card.value).reduce(reducer)
+    }
+
+    busted_check = () => {
+        if(this.value() > 21) {
+            this.busted = true
+        }
+    }
+
+}
+
+
 const fetchDealerHands = () =>{
     fetch(dealerHandsUrl)
     .then(resp=> resp.json())

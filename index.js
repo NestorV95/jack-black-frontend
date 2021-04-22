@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded',e=>{
-    fetchGames()
-    //showMainPage()
+    showGamePage()
+    // showMainPage()
     // fetchDealers()
-    //showSignUpForm()
-    //fetchDealerHands()
-    
+    // showSignUpForm()
 })
 
+const clearBodyDiv = () => {
+const bodyDiv = document.querySelector('.body-div')
+    bodyDiv.innerHTML = ''
+}

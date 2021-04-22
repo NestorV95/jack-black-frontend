@@ -1,9 +1,12 @@
 const showMainPage = () => {
-    showUserContainer()
+    clearBodyDiv()
+    // showUserContainer()
     fillUserContainer()
     showTwoThirdContainer()
     fillTwoThirdGames()
 }
+
+
 
 const showUserContainer = () =>{
     const bodyDiv = document.querySelector('.body-div')
@@ -13,6 +16,7 @@ const showUserContainer = () =>{
 }
 
 const fillUserContainer = () =>{
+    showUserContainer()
     fetchUsers()
     showSettingsButton()
 }
@@ -57,6 +61,19 @@ const showGamesIndex = () =>{
 
 const fillTwoThirdGames = () => {
     clearTwoThird()
-    showGameContainer()
+    fillGameContainer()
     showGamesIndex()
+}
+
+const fillGameContainer = () => {
+    showGameContainer()
+    const startGameDiv = document.querySelector('.start-game-button-container')
+    const startGameButton = document.createElement('button')
+    startGameButton.className = 'start-game'
+    startGameButton.innerText = 'Start Game'
+    startGameButton.addEventListener('click', e=>{
+        e.preventDefault()
+        showGamePage()
+    })
+    startGameDiv.append(startGameButton)
 }
