@@ -52,10 +52,10 @@ const showSignUpForm = () => {
     submitButton.type = 'submit'
     submitButton.innerText = 'Sign Up'
     signUpDiv.append(submitButton)
-    signUpForm.append(imageDiv,usernameDiv,passwordDiv,confirmDiv)
+    signUpForm.append(usernameDiv,passwordDiv,confirmDiv,imageDiv)
     signUpForm.addEventListener('submit',event =>{
         event.preventDefault()
-        createUser(event)   
+        console.log(e)
     })
     formContainer.append(signUpForm)
     homeFormDiv.append(signUpForm)

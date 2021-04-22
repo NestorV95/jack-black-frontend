@@ -9,7 +9,7 @@ body{
     width: 100vw;
     display: flex;
     margin: 0;
-    background: url(/background.jpg);
+    background: url(background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

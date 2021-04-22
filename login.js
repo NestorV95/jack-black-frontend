@@ -41,7 +41,7 @@ const renderLoginForm = (json) => {
             if (user.attributes.name == username && user.attributes.password == password) {
                 globalUser = user
                 showMainPage(user)
-                renderUser(user)
+                //renderUser(user)
             }
         })
 
