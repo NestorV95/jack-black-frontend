@@ -59,7 +59,7 @@ const renderGames = nestedData =>{
     // fillGameUserHand(u_hand)
     dHandDisplay(d_hand)
     // fillGameDealerHand(d_hand)
-    buttonDisplay(u_hand, d_hand, currentUser, data, true)    
+    buttonDisplay(u_hand, d_hand, currentUser, data, 1)    
     // fillGameButtonContainers(u_hand, d_hand, currentUser, data)
 }
 
@@ -133,28 +133,22 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
             // fillGameDealerHand(d_hand)
             if(d_hand.busted == true) {
                 currentUser.tokens = currentUser.tokens + u_hand.bet
-                //something soemthing  "User Wins"
-                
-                console.log('dealer busted')
+                buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
+
             } else {
                 let results = win_check(data,u_hand.value(),d_hand.value())
-                //do whatever with results
                 if(results == 'User Wins'){
-                    console.log('User Wins')
-                    currentUser.tokens = currentUser.tokens + u_hand.bet
-
+                    buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
                 } else if (results == 'User Loses'){
-                    console.log('User Loses')
-                    currentUser.tokens = currentUser.tokens - u_hand.bet
-
+                    buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
                 } else {
-                    console.log('User Ties')
+                    buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
                 }
             }
         } else {
             currentUser.tokens = currentUser.tokens - u_hand.bet
+            buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
 
-            console.log('User Loses')
         }
         uProfileDivDisplay(data, u_hand)
         // fillGamePlayerProfile(data, u_hand)
@@ -173,19 +167,19 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
         // fillGameUserHand(u_hand)
         if(u_hand.busted == true) {
             currentUser.tokens = currentUser.tokens - u_hand.bet
-            console.log('User busted')
+            console.log('hit')
+            buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
             uProfileDivDisplay(data, u_hand)
             // fillGamePlayerProfile(data, u_hand)
-        } else if (u_hand.value == 21) {
+        } else if (u_hand.value() == 21) {
             currentUser.tokens = currentUser.tokens + u_hand.bet
-            console.log('Dealer busted')
             uProfileDivDisplay(data, u_hand)
             // fillGamePlayerProfile(data, u_hand)
+            buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
 
         } else {
-            //reshow screen with out 2 buttons and with your new card
             buttons_div.html = ''
-            buttonDisplay(u_hand, d_hand, currentUser ,data , false)
+            buttonDisplay(u_hand, d_hand, currentUser ,data , 2)
         }    
     })
     // drawButtonDiv.append(drawBtn)
@@ -204,7 +198,7 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
         if(u_hand.busted == true) {
             currentUser.tokens = currentUser.tokens - u_hand.bet
             console.log('user busted')
-            return "User Loses"
+            
         } else {
             while(d_hand.value() < 16 || d_hand.value() < u_hand.value){
                 d_hand.appendCard()
@@ -214,25 +208,12 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
             // fillGameDealerHand(d_hand)
             if(d_hand.busted == true) {
                 currentUser.tokens = currentUser.tokens + u_hand.bet
-                //something soemthing  "User Wins"
-                console.log('dealer busted')
-
             } else {
                 let results = win_check(data,u_hand.value(),d_hand.value())
-                //do whatever with results
-                if(results == 'User Wins'){
-                    console.log('User Wins')
-                    currentUser.tokens = currentUser.tokens + u_hand.bet
-
-                } else if (results == 'User Loses'){
-                    currentUser.tokens = currentUser.tokens - u_hand.bet
-
-                    console.log('User Loses')
-                } else {
-                    console.log('User Ties')
-                }
             }
         }
+        u_hand.bet = u_hand.bet/2
+        buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
         uProfileDivDisplay(data, u_hand)
         // fillGamePlayerProfile(data, u_hand)
     })
@@ -246,6 +227,7 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
     surBtn.addEventListener('click', (e) => {
         currentUser.tokens = currentUser.tokens - (u_hand.bet/2)
         console.log('surrendered')
+        buttonDisplay(u_hand, d_hand, currentUser ,data , 3)
         uProfileDivDisplay(data, u_hand)
         // fillGamePlayerProfile(data, u_hand)
     })
@@ -260,9 +242,37 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
     })
     // exitGameButtonDiv.append(exitBtn)
 
-    if(first == true){
-        buttons_div.append(standBtn, drawBtn, doubleBtn, surBtn,exitBtn)
+    let replayBtn = document.createElement('button')
+    replayBtn.className = 'exit-game-button'
+    replayBtn.innerText = "Replay Game"
+    replayBtn.addEventListener('click', (e) => {
+        u_hand.cards = []
+        d_hand.cards = []
+
+        u_hand.appendCard()
+        u_hand.appendCard()
+        d_hand.appendCard()
+        d_hand.appendCard()
+
+        u_hand.busted = false
+        d_hand.busted = false
+
+        uProfileDivDisplay(data, u_hand)
+        // fillGamePlayerProfile(data, u_hand)
+        uHandDisplay(u_hand)
+        // fillGameUserHand(u_hand)
+        dHandDisplay(d_hand)
+        // fillGameDealerHand(d_hand)
+        buttonDisplay(u_hand, d_hand, currentUser, data, 1)    
+        // fillGameButtonContainers(u_hand, d_hand, currentUser, data)
+    })
+
+    if(first == 1){
+        buttons_div.append(standBtn, drawBtn, doubleBtn, surBtn, exitBtn)
+    } else if (first == 2){
+        buttons_div.append(standBtn, drawBtn, exitBtn)
     } else {
-        buttons_div.append(standBtn, drawBtn,exitBtn)
+        buttons_div.append(replayBtn, exitBtn)
     }
+
 }

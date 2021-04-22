@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded',e=>{
-    //showGamePage()
+    showGamePage()
     // showMainPage()
     // fetchDealers()
     // showSignUpForm()
     // fetchDealerHands()
     // showLoginForm()
-    showWelcome()
+    //showWelcome()
     
 })
 

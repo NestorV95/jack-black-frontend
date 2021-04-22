@@ -55,7 +55,7 @@ const renderDealerHands = nestedData =>{
     });
 }
 
-//cant finish this until our app is more functional.
+// cant finish this until our app is more functional.
 // const createDealerHand = event =>{
 //     const submittedUser = {
 //         user: 
