@@ -14,10 +14,6 @@ const showLoginContainers = () =>{
     homeSignInDiv.className = 'home-sign-in-container'
     const homeFormDiv = document.createElement('div')
     homeFormDiv.className ='home-form-container'
-    // const loginDiv = document.createElement('div')
-    // loginDiv.className = 'login-button-container'
-    // const signUpDiv = document.createElement('div')
-    // signUpDiv.className = 'sign-up-button-container'
     homeSignInDiv.append(homeFormDiv)
     bodyDiv.append(homeSignInDiv)
 }

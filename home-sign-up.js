@@ -4,6 +4,7 @@ const showSignUpForm = () => {
     const signUpForm = document.createElement('form')
     signUpForm.className = 'sign-up-form'
     const imageDiv = document.createElement('div')
+    imageDiv.className = 'sign-up-div'
     const imageLabel = document.createElement('label')
     imageLabel.className = 'sign-up-label'
     imageLabel.innerText = 'Profile Picture:'
@@ -14,6 +15,7 @@ const showSignUpForm = () => {
     imageInput.name = 'picture'
     imageDiv.append(imageLabel, imageBr, imageInput)
     const usernameDiv = document.createElement('div')
+    usernameDiv.className = 'sign-up-div'
     const usernameLabel = document.createElement('label')
     usernameLabel.className = 'sign-up-label'
     usernameLabel.innerText = 'Username:'
@@ -24,6 +26,7 @@ const showSignUpForm = () => {
     usernameInput.name = 'name'
     usernameDiv.append(usernameLabel, usernameBr, usernameInput)
     const passwordDiv = document.createElement('div')
+    passwordDiv.className = 'sign-up-div'
     const passwordLabel = document.createElement('label')
     passwordLabel.className = 'sign-up-label'
     passwordLabel.innerText = 'Password:'
@@ -34,6 +37,7 @@ const showSignUpForm = () => {
     passwordInput.name = 'password'
     passwordDiv.append(passwordLabel, passwordBr, passwordInput)
     const confirmDiv = document.createElement('div')
+    confirmDiv.className = 'sign-up-div'
     const confirmLabel = document.createElement('label')
     confirmLabel.className = 'sign-up-label'
     confirmLabel.innerText = 'Confirm Password:'
@@ -44,8 +48,8 @@ const showSignUpForm = () => {
     confirmInput.name = 'confirmation'
     confirmDiv.append(confirmLabel, confirmBr, confirmInput)
     const signUpDiv = document.querySelector('.sign-up-button-container')
-    signUpDiv.style.top = '39vh' 
-    signUpDiv.style.left = '9.25vw'
+    signUpDiv.style.top = '36.55vh' 
+    signUpDiv.style.left = '-3.08vw'
     signUpDiv.innerHTML = ''
     const submitButton = document.createElement('button')
     submitButton.className = 'home-sign-up-button'
