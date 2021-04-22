@@ -1,0 +1,44 @@
+.home-sign-in-container{
+    position: absolute;
+    display: block;
+    height: 50vh;
+    width: 45vw;
+    top: 10vh;
+    left: 24vw;
+    border-radius: 5%;
+    border: .5vmin solid blue;
+}
+
+.home-form-container{
+    position: absolute;
+    display: block;
+    height: 38vh;
+    width: 43.50vw;
+    top: .50vh;
+    left: .50vw;
+    border-radius: 5%;
+    border: .5vmin solid red;
+}
+
+.login-button-container{
+    position: absolute;
+    display: block;
+    height: 5vh;
+    width: 10vw;
+    top: 40vh;
+    left: 25vw;
+    border-radius: 5%;
+    border: .5vmin solid red;
+}
+
+.sign-up-button-container{
+    position: absolute;
+    display: block;
+    height: 5vh;
+    width: 10vw;
+    top: 40vh;
+    left: 10vw;
+    border-radius: 5%;
+    border: .5vmin solid red;
+}
+
