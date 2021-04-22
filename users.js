@@ -19,7 +19,7 @@ const renderUser = (userData) =>{
     const userCard = document.createElement('div')
     userCard.className = 'user-card'
     const imageDiv = document.createElement('div')
-    imageDiv.className = 'profile-picture-container'
+    imageDiv.className = 'main-profile-picture-container'
     const image = document.createElement('img')
     image.className = 'profile-picture'
     image.src = attributes.picture

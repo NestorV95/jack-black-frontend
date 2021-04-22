@@ -8,7 +8,7 @@
     border: .5vmin solid orange;
 }
 
-.profile-picture-container{
+.main-profile-picture-container{
     position: absolute;
     display: block;
     height: 25vh;

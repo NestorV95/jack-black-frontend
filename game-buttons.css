@@ -1,0 +1,36 @@
+.stand-button-container,.draw-button-container,.double-button-container,.surrender-button-container,
+.exit-game-button-container{
+    position: absolute;
+    display: block;
+    height: 4vh;
+    width: 10vw;
+    top: .25vh;
+    left: 7.5vw;
+    text-align: center;
+    border-radius: 10%;
+    border: .5vmin solid red;
+}
+
+.draw-button-container{
+    top: 5vh;
+}
+
+.double-button-container{
+    top: 10vh;
+}
+
+.surrender-button-container{
+    top: 15vh;
+}
+
+.exit-game-button-container{
+    top: 20vh;
+}
+
+.stand-button,.draw-button,.double-button,.surrender-button,.exit-game-button{
+    height: 4vh;
+    width: 10vw;
+    border-radius: 10%;
+    font-size:2.25vmin;
+
+}

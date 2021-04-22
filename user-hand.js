@@ -1,5 +1,31 @@
 const userHandUrl = 'http://localhost:3000/user_hands'
 
+class user_hand{
+
+    constructor(bet) {
+        this.bet = bet
+        this.cards = []
+        this.busted = false
+    }
+
+    appendCard = () => {
+        this.cards.push(drawCard())
+    }
+
+    value = () => {
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+        let reducer = (accumulator, currentValue) => accumulator + currentValue;
+        return this.cards.map(card => card.value).reduce(reducer)
+    }
+
+    busted_check = () => {
+        if(this.value() > 21) {
+            this.busted = true
+        }
+    }
+
+}
+
 const fetchUsershands = () =>{
     fetch(userHandUrl)
     .then(resp=> resp.json())

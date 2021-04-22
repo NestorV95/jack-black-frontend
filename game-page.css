@@ -1,0 +1,45 @@
+.u-profile{
+    position: absolute;
+    display: block;
+    height: 25vh;
+    width: 30vw;
+    top: 48vh;
+    left: .5vw;
+    border-radius: 10%;
+    border: .5vmin solid blue;
+}
+
+.u-hand{
+    position: absolute;
+    display: block;
+    height: 20vh;
+    width: 25vw;
+    top: 48vh;
+    left: 35vw;
+    border-radius: 10%;
+    border: .5vmin solid blue;
+}
+
+.d-hand{
+    position: absolute;
+    display: block;
+    height: 20vh;
+    width: 25vw;
+    top: .5vh;
+    left: 35vw;
+    border-radius: 10%;
+    border: .5vmin solid blue;
+}
+
+.buttons{
+    position: absolute;
+    display: block;
+    height: 25vh;
+    width: 25vw;
+    top: 48vh;
+    left: 69vw;
+    border-radius: 10%;
+    border: .5vmin solid blue;
+}
+
+
