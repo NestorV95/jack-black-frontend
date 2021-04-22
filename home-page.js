@@ -14,11 +14,11 @@ const showLoginContainers = () =>{
     homeSignInDiv.className = 'home-sign-in-container'
     const homeFormDiv = document.createElement('div')
     homeFormDiv.className ='home-form-container'
-    const loginDiv = document.createElement('div')
-    loginDiv.className = 'login-button-container'
-    const signUpDiv = document.createElement('div')
-    signUpDiv.className = 'sign-up-button-container'
-    homeSignInDiv.append(homeFormDiv, loginDiv, signUpDiv)
+    // const loginDiv = document.createElement('div')
+    // loginDiv.className = 'login-button-container'
+    // const signUpDiv = document.createElement('div')
+    // signUpDiv.className = 'sign-up-button-container'
+    homeSignInDiv.append(homeFormDiv)
     bodyDiv.append(homeSignInDiv)
 }
 
@@ -30,28 +30,32 @@ const fillLoginContainers = () => {
 }
 
 const fillLoginButton = () => {
-    const loginDiv = document.querySelector('.login-button-container')
-    loginDiv.innerHTML = ''
+    const homeSignInDiv = document.querySelector('.home-sign-in-container')
+    const loginDiv = document.createElement('div')
+    loginDiv.className = 'login-button-container'
     const welcomeLogin = document.createElement("button")
-    welcomeLogin.className = 'login-button'
+    welcomeLogin.className = 'home-login-button'
     welcomeLogin.innerText = 'Login'
-    loginDiv.append(welcomeLogin)
     welcomeLogin.addEventListener("click", () => {
-        renderLoginForm()
         fillSignUpButton()
+        showLoginForm()
     })
+    loginDiv.append(welcomeLogin)
+    homeSignInDiv.append(loginDiv)
 }
 
 const fillSignUpButton = () => {
-    const signUpDiv = document.querySelector('.sign-up-button-container')
-    signUpDiv.innerHTML = ''
+    const homeSignInDiv = document.querySelector('.home-sign-in-container')
+    const signUpDiv = document.createElement('div')
+    signUpDiv.className = 'sign-up-button-container'
     const signUpButton= document.createElement("button")
-    signUpButton.className = 'sign-up-button'
+    signUpButton.className = 'home-sign-up-button'
     signUpButton.innerText= 'Sign Up'
     signUpButton.addEventListener("click", () => {
-        showSignUpForm()
         fillLoginButton()
+        showSignUpForm()
     })
     signUpDiv.append(signUpButton)
+    homeSignInDiv.append(signUpDiv)
 }
 
