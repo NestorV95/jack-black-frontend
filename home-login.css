@@ -1,0 +1,65 @@
+.home-login-button{
+    position:absolute;
+    display: block;
+    height: 5vh;
+    width: 10vw; 
+    z-index: 20;
+    border-radius: 5%;
+} 
+
+.login-form{
+    position:absolute;
+    display: block;
+    height: 15vh;
+    width: 20vw; 
+    border-radius: 5%;
+    border: .5vmin solid blueviolet
+}
+
+
+
+.home-login-form{
+    position: absolute;
+    display: block;
+    height: 50vh;
+    width: 45vw;
+    top: 10vh;
+    left: 24vw;
+    border-radius: 5%;
+    z-index: 2;
+    border: .5vmin solid red
+}
+
+.login-name-container{
+    height: 7vh;
+    width: 15vw;
+    left: 2.5vw;
+    border-radius: 5%;
+    border: .5vmin solid green
+}
+
+.login-password-container{
+    height: 7vh;
+    width: 15vw;
+    left: 2.5vw;
+    border-radius: 5%;
+    border: .5vmin solid green
+}
+
+/* .login-label{
+    font-size: 3vmin;
+}
+
+.edit-input{
+    height: 3vmin;
+    width: 30vmin;
+} */
+
+.home-sign-up-button{
+    position:absolute;
+    display: block;
+    height: 5vh;
+    width: 10vw;
+    z-index: 20;
+    border-radius: 5%;
+}

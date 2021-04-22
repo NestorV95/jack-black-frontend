@@ -6,6 +6,7 @@
     top: 10vh;
     left: 24vw;
     border-radius: 5%;
+    z-index: 0;
     border: .5vmin solid blue;
 }
 
@@ -20,6 +21,7 @@
     border: .5vmin solid red;
 }
 
+
 .login-button-container{
     position: absolute;
     display: block;
@@ -27,6 +29,7 @@
     width: 10vw;
     top: 40vh;
     left: 25vw;
+    z-index: 1;
     border-radius: 5%;
     border: .5vmin solid red;
 }
@@ -38,6 +41,7 @@
     width: 10vw;
     top: 40vh;
     left: 10vw;
+    z-index: 1;
     border-radius: 5%;
     border: .5vmin solid red;
 }

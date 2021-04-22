@@ -1,8 +1,6 @@
 const showSignUpForm = () => {
     const homeFormDiv = document.querySelector('.home-form-container')
     homeFormDiv.innerHTML = ''
-    const formContainer = document.createElement('div')
-    formContainer.className = "form-container"
     const signUpForm = document.createElement('form')
     signUpForm.className = 'sign-up-form'
     const imageDiv = document.createElement('div')
@@ -46,19 +44,25 @@ const showSignUpForm = () => {
     confirmInput.name = 'confirmation'
     confirmDiv.append(confirmLabel, confirmBr, confirmInput)
     const signUpDiv = document.querySelector('.sign-up-button-container')
+    signUpDiv.style.top = '39vh' 
+    signUpDiv.style.left = '9.25vw'
     signUpDiv.innerHTML = ''
-    const submitButton = document.createElement('input')
-    submitButton.className = 'sign-up-button'
+    const submitButton = document.createElement('button')
+    submitButton.className = 'home-sign-up-button'
     submitButton.type = 'submit'
     submitButton.innerText = 'Sign Up'
     signUpDiv.append(submitButton)
+<<<<<<< HEAD:sign-up.js
     signUpForm.append(usernameDiv,passwordDiv,confirmDiv,imageDiv)
+=======
+    signUpForm.append(imageDiv,usernameDiv,passwordDiv,confirmDiv,signUpDiv)
+>>>>>>> ab800c6d5484e913e2a704034340231b789a0ac0:home-sign-up.js
     signUpForm.addEventListener('submit',event =>{
         event.preventDefault()
         console.log(e)
     })
-    formContainer.append(signUpForm)
     homeFormDiv.append(signUpForm)
+    // fillLoginButton()
 } 
 
 // const hideSignUpForm = () => {
