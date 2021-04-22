@@ -6,6 +6,7 @@ const showLoginForm = () => {
 
 const renderLoginForm = (json) => {
     const homeFormDiv = document.querySelector('.home-form-container')
+    homeFormDiv.innerHTML = ''
     const loginForm = document.createElement("form")
     loginForm.className = 'login-form'
     const usernameDiv = document.createElement('div')
@@ -25,13 +26,14 @@ const renderLoginForm = (json) => {
     passwordText.type ="text"
     passwordDiv.append(passwordLabel,passwordBr,passwordText)
     const loginDiv = document.querySelector('.login-button-container')
-    loginDiv.innerHTML = ''
-    const loginButton= document.createElement("button")
-    loginButton.className = "submit"
-    loginButton.innerText="submit"
+    loginDiv.style.top = '38.5vh'
+    loginDiv.style.left = '24vw'
+    const loginButton = document.createElement("button")
+    loginButton.class = 'home-login-button' 
+    loginButton.type = 'submit'
+    loginButton.innerText = "Log in"
     loginDiv.append(loginButton)
-    console.log(json["data"])
-    loginForm.append(usernameDiv, passwordDiv, loginButton)
+    loginForm.append(usernameDiv, passwordDiv, loginDiv)
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault()
         let username= e.target[0].value
@@ -46,7 +48,8 @@ const renderLoginForm = (json) => {
         })
 
     })
-    homeFormDiv.append(loginForm) 
+    homeFormDiv.append(loginForm)
+    // fillSignUpButton()
 }
 
 
