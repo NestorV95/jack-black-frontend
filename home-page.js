@@ -1,5 +1,5 @@
 const showWelcome = () => {
-    //showFullAgeCheck()
+    // showFullAgeCheck()
     fillLoginContainers()
 }
 
