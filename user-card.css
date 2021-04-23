@@ -1,63 +1,68 @@
 .profile-picture{
     position: absolute;
     display: block;
-    width: 24vmin;
-    height: 24vmin;
-    left: 5.5vw;
+    width: 30vmin;
+    height: 30vmin;
+    top: .5vmin;
+    left: .5vmin;
     border-radius: 50%;
-    border: .5vmin solid orange;
+    border: .5vmin solid rgb(100, 100, 100);
 }
 
 .main-profile-picture-container{
     position: absolute;
     display: block;
-    height: 25vh;
-    width: 23.75vw;
-    top: .5vh;
-    left: .5vw;
-    border-radius: 10%;
-    border: .5vmin solid red;
+    height: 32vmin;
+    width: 32vmin;
+    top: 1vh;
+    left: 3vw;
+    border-radius: 50%;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
 .user-card-profile{
     position: absolute;
     display: block;
-    height: 41.5vh;
+    height: 44vh;
     width: 23.75vw;
-    top: 27vmin;
+    top: 34vmin;
     left: .5vmin;
     border-radius: 10%;
-    border: .5vmin solid red;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
 .name-container{
     position: absolute;
     display: block;
     text-align: center;
-    height: 7vh;
+    height: 6vh;
     width: 20vw;
     top: 1vh;
     left: 2.5vmin;
     border-radius: 15%;
-    border: .5vmin solid orange;
+    background:  rgb(122, 122, 122);
+    border: .5vmin solid rgb(100, 100, 100);
 }
 
 .token-container{
     position: absolute;
     display: block;
     text-align: center;
-    height: 7vh;
+    height: 6vh;
     width: 20vw;
     top: 9vmin;
     left: 2.5vmin;
     border-radius: 10%;
-    border: .5vmin solid orange;
+    background:  rgb(122, 122, 122);
+    border: .5vmin solid rgb(100, 100, 100);
 }
 
 .username{
-    font-size: 3.25vmin;
+    font-size: 3vmin;
 }
 
 .tokens{
-    font-size: 3.25vmin;
+    font-size: 3vmin;
 }

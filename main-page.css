@@ -1,45 +1,50 @@
 .two-third-container{
     position: absolute;
     display: block;
-    height: 70vh;
+    height: 80vh;
     width: 67vw;
     top: 2vh;
     left: 26.5vw;
     border-radius: 5%;
-    border: .5vmin solid blue;
+    background: url('dark-grey-background.png') 0 0 no-repeat;
+    border: .5vmin solid rgb(39, 39, 39);
 }
 
 .game-container{
     position: absolute;
     display: block;
-    height: 44vmin;
+    height: 51vmin;
     width: 65.5vmax;
     top: .5vmin;
     left: .5vmin;
     border-radius: 5%;
-    border: .5vmin solid red;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
 .game-image-container{
     position: absolute;
     display: block;
-    height: 42vmin;
-    width: 43.5vw;
+    height: 49vmin;
+    width: 43vw;
     top: .5vmin;
     left: .5vw;
     border-radius: 5%;
-    border: .5vmin solid orange;
+    border: .5vmin solid rgb(100, 100, 100);
+    background: url('jack-4.jpeg') 0 0 no-repeat;
+    background-size: contain;
 }
 
 .game-details-container{
     position: absolute;
     display: block;
-    height: 42vh;
+    height: 49vh;
     width: 20vw;
     top: .5vh;
     left: 44.5vw;
     border-radius: 5%;
-    border: .5vmin solid orange;
+    background:  rgb(122, 122, 122);
+    border: .5vmin solid rgb(100, 100, 100);
 }
 
 .start-game-button-container{
@@ -52,7 +57,18 @@
     z-index: 10;
     text-align: center;
     border-radius: 10%;
-    border: .5vmin solid blueviolet;
+}
+
+.start-game{
+    position: absolute;
+    display: block;
+    height: 5vh;
+    width: 10vw;
+    z-index: 20;
+    text-align: center;
+    border-radius: 10%;
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(167, 167, 167);
 }
 
 .game-title-container{
@@ -64,41 +80,45 @@
     left: .25vw;
     text-align: center;
     border-radius: 10%;
-    border: .5vmin solid blueviolet; 
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(122, 122, 122);
 }
 
 .game-details-body{
     position: absolute;
     display: block;
-    height: 32vh;
+    height: 38vh;
     width: 19vw;
-    top: 8.50vh;
+    top: 9vh;
     left: .25vw;
     text-align: center;
     border-radius: 10%;
-    border: .5vmin solid blueviolet; 
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(122, 122, 122);
 }
 
 .games-index{
     position: absolute;
     display: block;
-    height: 23.5vmin;
+    height: 25vmin;
     width: 65.5vmax;
-    top: 45vmin;
+    top: 53vmin;
     left: .5vmin;
     border-radius: 7%;
-    border: .5vmin solid red;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
 .user-container{
     position: absolute;
     display: block;
-    height: 70vh;
+    height: 80vh;
     width: 25vw;
     top: 2vh;
     left: 0.5vw;
     border-radius: 10%;
-    border: .5vmin solid blue;
+    background: url('dark-grey-background.png') 0 0 no-repeat;
+    border: .5vmin solid rgb(39, 39, 39);
 }
 
 

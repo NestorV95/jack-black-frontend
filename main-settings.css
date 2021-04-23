@@ -3,12 +3,13 @@
     display: block;
     height: 5vmin;
     width: 5vmin;
-    top: .5vh;
-    left: 20vw;
+    top: 1vh;
+    left: 20.5vw;
     z-index: 10;
     text-align: center;
     border-radius: 50%;
-    border: .5vmin solid orange;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
 .settings-button{
@@ -22,17 +23,18 @@
 .settings-title-div{
     position: absolute;
     display: block;
-    height: 15vmin;
+    height: 12vh;
     width: 32.5vmax;
-    top: 2vmin;
-    left: 32.5vmin;
+    top: 10vmin;
+    left: 31vmin;
     text-align: center;
     border-radius: 7%;
-    border: .5vmin solid red;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
 .settings-title{
-    font-size: 6vmin;
+    font-size: 5vmin;
 }
 
 .settings-options-div{
@@ -40,10 +42,11 @@
     display: block;
     height: 44vmin;
     width: 32.5vmax;
-    top: 22vmin;
-    left: 32.5vmin;
+    top: 24vmin;
+    left: 31vmin;
     border-radius: 5%;
-    border: .5vmin solid red;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
 .exit-settings-button-container{
@@ -51,10 +54,9 @@
     display: block;
     height: 4.5vmin;
     width: 40vmin;
-    top: 22vmin;
-    left: 12.25vmin;
+    top: 28vh;
+    left: 4.5vw;
     border-radius: 5%;
-    border: .5vmin solid orange;
 }
 
 .exit-settings-button{
@@ -62,4 +64,6 @@
     display: block;
     height: 4.5vmin;
     width: 40vmin;
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(167, 167, 167);
 }

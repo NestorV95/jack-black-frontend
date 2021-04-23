@@ -3,10 +3,9 @@
     display: block;
     height: 4.5vmin;
     width: 40vmin;
-    top: 8vmin;
-    left: 12.25vmin;
+    top: 10vh;
+    left: 4.5vw;
     border-radius: 5%;
-    border: .5vmin solid orange;
 }
 
 .edit-button{
@@ -14,6 +13,8 @@
     display: block;
     height: 4.5vmin;
     width: 40vmin;
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(167, 167, 167);
 }
 
 .user-edit-form-container{
@@ -24,7 +25,6 @@
     top: .5vmin;
     left: .5vmin;
     border-radius: 5%;
-    border: .5vmin solid orange;
 }
 
 .user-edit-form{
@@ -32,18 +32,18 @@
     display: block;
     height: 39.50vh;
     width: 20vw;
-    top: .5vmin;
-    left: 10vmin;
+    top: 1vh;
+    left: 5.5vw;
     border-radius: 5%;
-    border: .5vmin solid blueviolet
+    background:  rgb(122, 122, 122);
+    border: .5vmin solid rgb(100, 100, 100);
 }
 
 .user-edit-form-div{
     height: 7vh;
-    width: 15vw;
-    left: 2.5vw;
+    width: 20vw;
+    /* left: 2.5vw; */
     border-radius: 5%;
-    border: .5vmin solid green
 }
 
 .edit-label{
@@ -59,14 +59,18 @@
     position:absolute;
     display: block;
     height: 4.5vmin;
-    width: 18vmin;
+    width: 14vmin;
     left: 1vmin;
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(167, 167, 167);
 }
 
 .cancel-user-edit-button{
     position:absolute;
     display: block;
     height: 4.5vmin;
-    width: 18vmin;
-    left: 21vmin;
+    width: 14vmin;
+    left: 20vmin;
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(167, 167, 167);
 }

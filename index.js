@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded',e=>{
     resetGlobalUser()
+    // showMainPage()
     showWelcome()
     // showFullAgeCheck()
 })

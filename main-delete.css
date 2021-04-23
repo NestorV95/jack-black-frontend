@@ -3,10 +3,9 @@
     display: block;
     height: 4.5vmin;
     width: 40vmin;
-    top: 15vmin;
-    left: 12.25vmin;
+    top: 19vh;
+    left: 4.5vw;
     border-radius: 5%;
-    border: .5vmin solid orange;
 }
 
 .delete-user-button{
@@ -14,6 +13,8 @@
     display: block;
     height: 4.5vmin;
     width: 40vmin;
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(167, 167, 167);
 }
 
 .delete-user-prompt-container{
@@ -22,21 +23,23 @@
     height: 20vmin;
     width: 40vmin;
     top: 10vmin;
-    left: 12.25vmin;
-    border-radius: 20%;
-    border: .5vmin solid orange;
+    left: 4.5vw;
+    border-radius: 10%;
+    background:  rgb(122, 122, 122);
+    border: .5vmin solid rgb(100, 100, 100);
 }
 
 .delete-user-prompt-text{
     font-size: 2.75vmin;
     position: absolute;
     display: block;
-    height: 13vmin;
-    width: 35vmin;
-    top: -2vmin;
+    height: 10vh;
+    width: 20vw;
+    top: -1vmin;
     left: 2vmin;
-    border-radius: 20%;
-    border: .5vmin solid blueviolet;
+    border-radius: 10%;
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(167, 167, 167);
 }
 
 .delete-user-prompt-button-container{
@@ -46,8 +49,7 @@
     width: 35vmin;
     top: 14vmin;
     left: 2vmin;
-    border-radius: 20%;
-    border: .5vmin solid blueviolet;
+    border-radius: 10%;
 }
 
 .yes-delete-user-button{
@@ -57,8 +59,10 @@
     width: 15vmin;
     top: 0vmin;
     left: 1.5vmin;
-    border-radius: 15%;
-    border: .5vmin solid green;
+    border-radius: 10%;
+    background:  rgb(255, 81, 81);
+    border: .5vmin solid rgb(255, 48, 48);
+    color: white;
 }
 
 .no-delete-user-button{
@@ -68,8 +72,9 @@
     width: 15vmin;
     top: 0vmin;
     left: 18.5vmin;
-    border-radius: 15%;
-    border: .5vmin solid green;
+    border-radius: 10%;
+    background:  rgb(150, 150, 150);
+    border: .5vmin solid rgb(167, 167, 167);
 }
 
 .delete-user-form-container{
@@ -79,8 +84,7 @@
     width: 35vmin;
     top: 14vmin;
     left: 2vmin;
-    border-radius: 20%;
-    border: .5vmin solid blueviolet;
+    border-radius: 10%;
 }
 
 .delete-user-input{
@@ -90,8 +94,7 @@
     width: 25vmin;
     top: 0vmin;
     left: 0vmin;
-    border-radius: 15%;
-    border: .5vmin solid green;
+    border-radius: 10%;
 }
 
 .confirm-user-delete{
@@ -101,6 +104,8 @@
     width: 9vmin;
     top: 0vmin;
     left: 26vmin;
-    border-radius: 15%;
-    border: .5vmin solid green;
+    border-radius: 10%;
+    background:  rgb(255, 81, 81);
+    border: .5vmin solid rgb(255, 48, 48);
+    color: white;
 }
