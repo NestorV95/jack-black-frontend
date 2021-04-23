@@ -44,14 +44,13 @@
     position: absolute;
     display: block;
     height: 75vh;
-    width: 70vw;
+    width: 28vw;
     perspective: 1600px;
     /* transform: rotatex(50deg); */
     top: -2vh;
     left: 35vw;
     background: transparent url('jack-1.png') 0 0 no-repeat;
     background-size: contain;
-    border: .5vmin solid rgb(39, 39, 39);
 }
 
 .game-table{
