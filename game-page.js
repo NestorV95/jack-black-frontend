@@ -12,7 +12,7 @@ const fillGamePage = (uHand, dHand, currentUser, data) =>{
     fillGamePlayerProfile(data,uHand)
     fillGameUserHand(uHand)
     fillGameDealerHand(dHand)
-    fillGameButtonContainers(uHand, dHand, currentUser, data)
+    // fillGameButtonContainers(uHand, dHand, currentUser, data)
 }
 
 const showGamePageContainers = () =>{

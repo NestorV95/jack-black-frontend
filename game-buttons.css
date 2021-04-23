@@ -1,5 +1,5 @@
 .stand-button-container,.draw-button-container,.double-button-container,.surrender-button-container,
-.exit-game-button-container{
+.exit-game-button-container,.replay-game-button-container{
     position: absolute;
     display: block;
     height: 4vh;
@@ -20,7 +20,7 @@
     top: 10vh;
 }
 
-.surrender-button-container{
+.surrender-button-container,.replay-game-button-container{
     top: 15vh;
 }
 

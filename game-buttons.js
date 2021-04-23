@@ -1,17 +1,17 @@
-const showGameButtonContainers = () =>{
-    const buttonsDiv = document.querySelector('.buttons')
-    const standButtonDiv = document.createElement('div')
-    standButtonDiv.className = 'stand-button-container'
-    const drawButtonDiv = document.createElement('div')
-    drawButtonDiv.className = 'draw-button-container'
-    const doubleButtonDiv = document.createElement('div')
-    doubleButtonDiv.className = 'double-button-container'
-    const surrenderButtonDiv = document.createElement('div')
-    surrenderButtonDiv.className = 'surrender-button-container'
-    const exitGameButtonDiv = document.createElement('div')
-    exitGameButtonDiv.className = 'exit-game-button-container'
-    buttonsDiv.append(standButtonDiv,drawButtonDiv,doubleButtonDiv,surrenderButtonDiv,exitGameButtonDiv)
-}
+// const showGameButtonContainers = () =>{
+//     const buttonsDiv = document.querySelector('.buttons')
+//     const standButtonDiv = document.createElement('div')
+//     standButtonDiv.className = 'stand-button-container'
+//     const drawButtonDiv = document.createElement('div')
+//     drawButtonDiv.className = 'draw-button-container'
+//     const doubleButtonDiv = document.createElement('div')
+//     doubleButtonDiv.className = 'double-button-container'
+//     const surrenderButtonDiv = document.createElement('div')
+//     surrenderButtonDiv.className = 'surrender-button-container'
+//     const exitGameButtonDiv = document.createElement('div')
+//     exitGameButtonDiv.className = 'exit-game-button-container'
+//     buttonsDiv.append(standButtonDiv,drawButtonDiv,doubleButtonDiv,surrenderButtonDiv,exitGameButtonDiv)
+// }
 
 // const fillGameButtonContainers = (uHand, dHand, currentUser ,data) =>{
 //     const standButtonDiv = document.querySelector('.stand-button-container')

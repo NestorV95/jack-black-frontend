@@ -52,22 +52,22 @@ const renderGames = nestedData =>{
     d_hand.appendCard()
 
     // //get page
-    let bodyDiv = document.getElementsByClassName('body-div')[0]
-    bodyDiv.innerHTML = ""
-    //make divs
-    const uProfileDiv = document.createElement('div')
-    const u_hand_div = document.createElement('div')
-    const d_hand_div = document.createElement('div')
-    const buttons_div = document.createElement('div')
+    // let bodyDiv = document.getElementsByClassName('body-div')[0]
+    // bodyDiv.innerHTML = ""
+    // //make divs
+    // const uProfileDiv = document.createElement('div')
+    // const u_hand_div = document.createElement('div')
+    // const d_hand_div = document.createElement('div')
+    // const buttons_div = document.createElement('div')
 
-    // //make divs className
-    uProfileDiv.className = 'u-profile'
-    u_hand_div.className = 'u-hand'
-    d_hand_div.className = 'd-hand'
-    buttons_div.className = 'buttons'
+    // // //make divs className
+    // uProfileDiv.className = 'u-profile'
+    // u_hand_div.className = 'u-hand'
+    // d_hand_div.className = 'd-hand'
+    // buttons_div.className = 'buttons'
 
     // //things arnt getting deleted and reloaded for some reason otherwise it works
-    bodyDiv.append(uProfileDiv, u_hand_div, d_hand_div, buttons_div)
+    // bodyDiv.append(uProfileDiv, u_hand_div, d_hand_div, buttons_div)
 
     uProfileDivDisplay(currentUser, u_hand)
     // fillGamePlayerProfile(data, u_hand)
@@ -81,19 +81,49 @@ const renderGames = nestedData =>{
 
 //NEEDS TO BE ADJUSTED
 function uProfileDivDisplay(currentUser, u_hand) {
+    
     const uProfileDiv = document.querySelector('.u-profile')
     uProfileDiv.innerText = ''
 
-    let h1 = document.createElement('h1')
+    // let h1 = document.createElement('h1')
+    // h1.innerText = currentUser.attributes.name
+
+    // let m = document.createElement('p')
+    // m.innerText = 'TOKENS: ' + currentUser.attributes.tokens
+
+    // let p = document.createElement('p')
+    // p.innerText = 'BET: ' + u_hand.bet
+
+    // uProfileDiv.append(h1, m, p)
+
+    const imageDiv = document.createElement('div')
+    imageDiv.className = 'game-profile-picture-container'
+    const playerImage = document.createElement('img')
+    playerImage.className = 'game-player-image'
+    playerImage.src = currentUser.attributes.picture
+    imageDiv.append(playerImage)
+
+    const h1Div = document.createElement('div')
+    h1Div.className = 'game-player-name-container'
+    const h1 = document.createElement('h1')
+    h1.className = 'game-player-name'
     h1.innerText = currentUser.attributes.name
+    h1Div.append(h1)
+    
+    const tokenDiv = document.createElement('div')
+    tokenDiv.className = 'game-token-container'
+    const money = document.createElement('p')
+    money.className = 'game-player-tokens'
+    money.innerText = 'TOKENS: ' + currentUser.attributes.tokens
+    tokenDiv.append(money)
 
-    let m = document.createElement('p')
-    m.innerText = 'TOKENS: ' + currentUser.attributes.tokens
-
-    let p = document.createElement('p')
+    const betDiv = document.createElement('div')
+    betDiv.className = 'game-bet-container' 
+    const p = document.createElement('p')
+    p.className = 'game-player-bet'
     p.innerText = 'BET: ' + u_hand.bet
-
-    uProfileDiv.append(h1, m, p)
+    betDiv.append(p)
+    uProfileDiv.append(imageDiv, h1Div, tokenDiv, betDiv)
 
 }
 
@@ -101,33 +131,50 @@ function uProfileDivDisplay(currentUser, u_hand) {
 function uHandDisplay(u_hand) {
     const u_hand_div = document.querySelector('.u-hand')
     u_hand_div.innerHTML = ''
+    // showGameUserHand()
 
+    // const userCards = document.querySelector('.game-user-cards-container')
+    const userCards = document.createElement('div')
+    userCards.className = 'game-user-cards-container'
     u_hand.cards.forEach(card => {
+
         let img = document.createElement('img')
         img.className = 'card'
         img.src = card.img
-        u_hand_div.append(img)
+        userCards.append(img)
+        u_hand_div.append(userCards)
     })
-
+    // const userText = document.querySelector('.game-user-text-container')
+    const userText = document.createElement('div')
+    userText.className = 'game-user-text-container'
     let p = document.createElement('p')
+    p.className = 'game-user-text' 
     p.innerText = 'YOUR HAND VALUE IS: ' + u_hand.value()
-    u_hand_div.append(p)
+    userText.append(p)
+    u_hand_div.append(userText)
 }
 
 function dHandDisplay(d_hand) {
     const d_hand_div = document.querySelector('.d-hand')
+
     d_hand_div.innerHTML = ''
 
+    const dealerCards = document.createElement('div')
+    dealerCards.className = 'game-dealer-cards-container'
     d_hand.cards.forEach(card => {
         let img = document.createElement('img')
         img.className = 'card'
         img.src = card.img
-        d_hand_div.append(img)
+        dealerCards.append(img)
     })
 
+    const dealerText = document.createElement('div')
+    dealerText.className = 'game-dealer-text-container'
     let p = document.createElement('p')
+    p.className = 'game-dealer-text' 
     p.innerText = 'DEALER HAND VALUE IS: ' + d_hand.value()
-    d_hand_div.append(p)
+    dealerText.append(p)
+    d_hand_div.append(dealerCards,dealerText)
 }
 
 //NEEDS TO BE ADJUSTED
@@ -139,6 +186,8 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
 
     //button to stand
     // const standButtonDiv = document.querySelector('.stand-button-container')
+    const standButtonDiv = document.createElement('div')
+    standButtonDiv.className = 'stand-button-container'
     let standBtn = document.createElement('button')
     standBtn.className = 'stand-button'
     standBtn.innerText = "Stand"
@@ -177,10 +226,12 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
         uProfileDivDisplay(currentUser, u_hand)
         // fillGamePlayerProfile(data, u_hand)
     })
-    // standButtonDiv.append(standBtn)
+    standButtonDiv.append(standBtn)
    
     //button to draw
     // const drawButtonDiv = document.querySelector('.draw-button-container')
+    const drawButtonDiv = document.createElement('div')
+    drawButtonDiv.className = 'draw-button-container'
     let drawBtn = document.createElement('button')
     drawBtn.className = 'draw-button'
     drawBtn.innerText = "Draw"
@@ -207,10 +258,12 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
             buttonDisplay(u_hand, d_hand, currentUser ,data , 2)
         }    
     })
-    // drawButtonDiv.append(drawBtn)
+    drawButtonDiv.append(drawBtn)
     
     //button to double down
     // const doubleButtonDiv = document.querySelector('.double-button-container')
+    const doubleButtonDiv = document.createElement('div')
+    doubleButtonDiv.className = 'double-button-container'
     let doubleBtn = document.createElement('button')
     doubleBtn.className = 'double-button'
     doubleBtn.innerText = "Double Down"
@@ -242,10 +295,12 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
         uProfileDivDisplay(currentUser, u_hand)
         // fillGamePlayerProfile(data, u_hand)
     })
-    // doubleButtonDiv.append(doubleBtn)
+    doubleButtonDiv.append(doubleBtn)
 
     //button to surrender
     // const surrenderButtonDiv = document.querySelector('.surrender-button-container')
+    const surrenderButtonDiv = document.createElement('div')
+    surrenderButtonDiv.className = 'surrender-button-container'
     let surBtn = document.createElement('button')
     surBtn.className = 'surrender-button'
     surBtn.innerText = "Surrender"
@@ -256,17 +311,21 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
         uProfileDivDisplay(currentUser, u_hand)
         // fillGamePlayerProfile(data, u_hand)
     })
-    // surrenderButtonDiv.append(surBtn)
+    surrenderButtonDiv.append(surBtn)
 
     // const exitGameButtonDiv = document.querySelector('.exit-game-button-container')
+    const exitButtonDiv = document.createElement('div')
+    exitButtonDiv.className = 'exit-game-button-container'
     let exitBtn = document.createElement('button')
     exitBtn.className = 'exit-game-button'
     exitBtn.innerText = "Exit Game"
     exitBtn.addEventListener('click', (e) => {
         showMainPage(currentUser)
     })
-    // exitGameButtonDiv.append(exitBtn)
+    exitButtonDiv.append(exitBtn)
 
+    const replayButtonDiv = document.createElement('div')
+    replayButtonDiv.className = 'replay-game-button-container'
     let replayBtn = document.createElement('button')
     replayBtn.className = 'exit-game-button'
     replayBtn.innerText = "Replay Game"
@@ -291,13 +350,14 @@ function buttonDisplay(u_hand, d_hand, currentUser ,data , first){
         buttonDisplay(u_hand, d_hand, currentUser, data, 1)    
         // fillGameButtonContainers(u_hand, d_hand, currentUser, data)
     })
+    replayButtonDiv.append(replayBtn)
 
     if(first == 1){
-        buttons_div.append(standBtn, drawBtn, doubleBtn, surBtn, exitBtn)
+        buttons_div.append(standButtonDiv, drawButtonDiv, doubleButtonDiv, surrenderButtonDiv, exitButtonDiv)
     } else if (first == 2){
-        buttons_div.append(standBtn, drawBtn, exitBtn)
+        buttons_div.append(standButtonDiv, drawButtonDiv, exitButtonDiv)
     } else {
-        buttons_div.append(replayBtn, exitBtn)
+        buttons_div.append(replayButtonDiv, exitButtonDiv)
     }
 
 }
