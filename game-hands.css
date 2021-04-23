@@ -1,5 +1,5 @@
 /* ---------------------------------- In Game User Hand Stuff ------------------------------------*/
-.game-user-cards-container, .game-dealer-cards-container{
+.game-dealer-cards-container{
     position: absolute;
     display: block;
     height: 10vh;
@@ -8,19 +8,41 @@
     left: .25vw;
     text-align: center;
     border-radius: 10%;
-    border: .5vmin solid red
 }
 
-.game-user-text-container, .game-dealer-text-container{
+.game-dealer-text-container{
     position: absolute;
     display: block;
     height: 6vh;
     width: 24vw;
-    top: 12vh;
+    top: 11vh;
     left: .25vw;
     text-align: center;
     border-radius: 10%;
-    border: .5vmin solid red
+
+}
+
+.game-user-cards-container{
+    position: absolute;
+    display: block;
+    height: 10vh;
+    width: 24vw;
+    top: 7vh;
+    left: .25vw;
+    text-align: center;
+    border-radius: 10%;
+}
+
+.game-user-text-container{
+    position: absolute;
+    display: block;
+    height: 6vh;
+    width: 24vw;
+    top: .25vh;
+    left: .25vw;
+    text-align: center;
+    border-radius: 10%;
+
 }
 
 .game-user-text, .game-dealer-text{

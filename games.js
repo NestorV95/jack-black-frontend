@@ -69,8 +69,8 @@ const renderGames = nestedData =>{
     // //things arnt getting deleted and reloaded for some reason otherwise it works
     bodyDiv.append(uProfileDiv, u_hand_div, d_hand_div, buttons_div)
 
-    uProfileDivDisplay(currentUser, u_hand)
-    // fillGamePlayerProfile(data, u_hand)
+    // uProfileDivDisplay(currentUser, u_hand)
+    fillGamePlayerProfile(data, u_hand)
     uHandDisplay(u_hand)
     // fillGameUserHand(u_hand)
     dHandDisplay(d_hand)

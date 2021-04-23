@@ -2,62 +2,63 @@
 .game-profile-picture-container{
     position: absolute;
     display: block;
-    height: 20vh;
-    width: 20vh;
-    top: 5vmin;
-    border-radius: 10%;
-    border: .5vmin solid red;
+    height: 26vh;
+    width: 26vh;
+    top: -1vmin;
+    border-radius: 50%;
+    z-index: 1;
+    background: url('dark-grey-background.png') 0 0 no-repeat;
+    border: .5vmin solid rgb(39, 39, 39);
 }
 .game-player-image{
     position: absolute;
     display: block;
-    height: 20vmin;
-    width: 20vmin;
+    height: 25vh;
+    width: 25vh;
     border-radius: 50%;
-    border: .5vmin solid orange;
 }
 
 .game-player-name-container{
     position: absolute;
     display: block;
-    height: 6vh;
-    width: 17vw;
+    height: 5vh;
+    width: 15vw;
+    top: -4vh;
+    left: -.5vw;
     text-align: center;
-    z-index: 10;
+    z-index: 2;
     border-radius: 10%;
-    border: .5vmin solid red;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
 .game-token-container{
     position: absolute;
     display: block;
-    height: 6vh;
-    width: 20vw;
-    top: 18vh;
+    height: 5vh;
+    width: 15vw;
+    top: 20vh;
     left: 10vw;
-    text-align: center;
-    z-index: 10;
+    text-align: right;
     border-radius: 10%;
-    border: .5vmin solid red;
-}
-
-.game-player-tokens{
-    font-size: 3vmin;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
 .game-bet-container{
     position: absolute;
     display: block;
-    height: 6vh;
-    width: 20vw;
-    top: 11vh;
-    left: 10vw;
-    text-align: center;
+    height: 5vh;
+    width: 14vw;
+    top: 14vh;
+    left: 11vw;
+    text-align: right;
     border-radius: 10%;
-    border: .5vmin solid red;
+    background: url('grey-background.jpeg') 0 0 no-repeat;
+    border: .5vmin solid rgb(44, 44, 44);
 }
 
-.game-player-bet{
-    font-size: 3vmin;
+.game-player-bet, .game-player-tokens{
+    font-size: 2.5vmin;
 }
 

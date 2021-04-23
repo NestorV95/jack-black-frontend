@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded',e=>{
     resetGlobalUser()
     // showMainPage()
-    showWelcome()
+    // showWelcome()
     // showFullAgeCheck()
+    showGamePage()
 })
 
 let globalUser = null

@@ -17,6 +17,10 @@ const fillGamePage = (uHand, dHand, currentUser, data) =>{
 
 const showGamePageContainers = () =>{
     const bodyDiv = document.querySelector('.body-div')
+    const dealerDiv = document.createElement('div')
+    dealerDiv.className = 'dealer-avatar'
+    const gameTable = document.createElement('div')
+    gameTable.className = 'game-table'
     const uProfileDiv = document.createElement('div')
     uProfileDiv.className = 'u-profile'
     const uHandDiv = document.createElement('div')
@@ -25,5 +29,6 @@ const showGamePageContainers = () =>{
     dHandDiv.className = 'd-hand'
     const buttonsDiv = document.createElement('div')
     buttonsDiv.className = 'buttons'
-    bodyDiv.append(uProfileDiv, uHandDiv, dHandDiv, buttonsDiv)
+    bodyDiv.append(dealerDiv,gameTable,uProfileDiv, uHandDiv, dHandDiv, buttonsDiv)
 }
+

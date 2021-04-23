@@ -3,10 +3,9 @@
     display: block;
     height: 25vh;
     width: 30vw;
-    top: 48vh;
+    top: 58vh;
     left: .5vw;
     border-radius: 10%;
-    border: .5vmin solid blue;
 }
 
 .u-hand{
@@ -14,10 +13,9 @@
     display: block;
     height: 20vh;
     width: 25vw;
-    top: 48vh;
-    left: 35vw;
+    top: 65vh;
+    left: 36vw;
     border-radius: 10%;
-    border: .5vmin solid blue;
 }
 
 .d-hand{
@@ -25,10 +23,9 @@
     display: block;
     height: 20vh;
     width: 25vw;
-    top: .5vh;
-    left: 35vw;
+    top: 42vh;
+    left: 36vw;
     border-radius: 10%;
-    border: .5vmin solid blue;
 }
 
 .buttons{
@@ -36,10 +33,46 @@
     display: block;
     height: 25vh;
     width: 25vw;
-    top: 48vh;
+    top: 58vh;
     left: 69vw;
     border-radius: 10%;
-    border: .5vmin solid blue;
+    background: url('dark-grey-background.png') 0 0 no-repeat;
+    border: .5vmin solid rgb(39, 39, 39);
 }
 
+.dealer-avatar{
+    position: absolute;
+    display: block;
+    height: 75vh;
+    width: 70vw;
+    perspective: 1600px;
+    /* transform: rotatex(50deg); */
+    top: -2vh;
+    left: 35vw;
+    background: transparent url('jack-1.png') 0 0 no-repeat;
+    background-size: contain;
+    border: .5vmin solid rgb(39, 39, 39);
+}
 
+.game-table{
+    position: absolute;
+    display: block;
+    height: 75vh;
+    width: 70vw;
+    perspective: 1600px;
+    transform: rotatex(55deg);
+    top: 27vh;
+    left: 14vw;
+    background: url('black-jack-table.png') 0 0 no-repeat;
+    background-size: contain;
+
+}
+
+.card{
+    position: absolute;
+    display: block;
+    height: 75vh;
+    width: 70vw;
+    perspective: 1600px;
+    transform: rotatex(55deg);
+}
