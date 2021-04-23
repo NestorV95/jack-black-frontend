@@ -30,8 +30,8 @@ const renderLoginForm = (json) => {
     passwordText.type ="text"
     passwordDiv.append(passwordLabel,passwordBr,passwordText)
     const loginDiv = document.querySelector('.login-button-container')
-    loginDiv.style.top = '28.5vh'
-    loginDiv.style.left = '12vw'
+    loginDiv.style.top = '29vh'
+    loginDiv.style.left = '12.10vw'
     const loginButton = document.createElement("button")
     loginButton.class = 'home-login-button' 
     loginButton.type = 'submit'

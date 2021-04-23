@@ -9,37 +9,52 @@ body{
     width: 100vw;
     display: flex;
     margin: 0;
-    background:url(background.jpg);
+    /* background:url(background.jpg); */
+    background: url(Image-by-sumroeng-chinnapan.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
    /* background: radial-gradient(circle at 50vw 50vh, rgb(196, 196, 196), rgb(0, 0, 0)); */
-}.title-div{
+}
+
+.title-div{
     position: absolute;
     display: block;
-    height: 15vh;
-    width: 95vw;
-    top: 2.5vh;
-    left: 2.5vw;
-    border: .5vmin solid green;
-    /* background: radial-gradient(circle at 47vw 7vh, rgb(0, 0, 0, .50), rgb(126, 0, 0,.50)); */
+    height: 10vh;
+    width: 50vw;
+    left: 24vw;
 }
+
+.logo-div{
+    position: absolute;
+    display: block;
+    height: 15vmin;
+    width: 15vmin;
+    top: .5vh;
+    left: .5vw;
+    background: url(JBBJ.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+
 .body-div{
     position: absolute;
     display: block; 
-    height: 75vh;
+    height: 85vh;
     width: 95vw; 
-    top: 20vh;
+    top: 10vh;
     left: 2.5vw;
     border: .5vmin solid green;
 }
 
 #app-title{
     text-align: center;
-    font-size: 7vmin;
+    font-size: 6vmin;
+    color: white;
     text-shadow:
-    .5vmin .5vmin 1vmin white,
-    -.5vmin -.5vmin 1vmin white;
+    .5vmin .5vmin 1vmin grey,
+    -.5vmin -.5vmin 1vmin grey;
 }
 
 #icon{

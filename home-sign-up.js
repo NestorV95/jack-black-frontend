@@ -48,8 +48,8 @@ const showSignUpForm = () => {
     confirmInput.name = 'confirmation'
     confirmDiv.append(confirmLabel, confirmBr, confirmInput)
     const signUpDiv = document.querySelector('.sign-up-button-container')
-    signUpDiv.style.top = '36.55vh' 
-    signUpDiv.style.left = '-3.08vw'
+    signUpDiv.style.top = '37vh' 
+    signUpDiv.style.left = '-3.30vw'
     signUpDiv.innerHTML = ''
     const submitButton = document.createElement('button')
     submitButton.className = 'home-sign-up-button'
