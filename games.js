@@ -39,7 +39,7 @@ const fetchGames = () =>{
 }   
     
 const renderGames = nestedData =>{
-    let data = nestedData['data'].find(game => game.attributes.users[0].id == globalUser.id)
+    let data = nestedData['data'].find(game => console.log(game))
     let currentUser = globalUser
 
     //setup hands

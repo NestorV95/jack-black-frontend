@@ -9,11 +9,7 @@ body{
     width: 100vw;
     display: flex;
     margin: 0;
-<<<<<<< HEAD
     background: url(background.jpg);
-=======
-    background:url(background.jpg);
->>>>>>> ab800c6d5484e913e2a704034340231b789a0ac0
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

@@ -55,7 +55,28 @@ const createUser = event =>{
     }
     fetch(usersUrl, configUser)
     .then(resp=>resp.json())
-    .then(newUser=> console.log(newUser))
+    .then(newUser=> globalUser = newUser)
+    .then(() => fetch('http://localhost:3000/games', {
+        method: 'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({min_bet: 1, max_bet: 10})
+    }))
+    .then(resp=>resp.json())
+    .then((json) => fetch('http://localhost:3000/user_hands', {
+        method: 'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({bet:10, user_id: globalUser['data']['attributes']['id'], game_id: json.data.attributes.id})
+    }))
+    .then(resp=>resp.json())
+    .then((json) => fetch('http://localhost:3000/dealer_hands', {
+        method: 'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        // HARD CODEING FOR NOW BUT REALLY FOREVER ADJUST WHENEVER SEEDING
+        body: JSON.stringify({game_id: json.data.attributes.game.id, dealer_id: 4})
+    }))
+    .then(resp => resp.json())
+    .then(json => console.log(json))
+    showHomePage()
 }
 
 // currently hard coded for testing purposes. will fix when our app is more functional.
